@@ -110,7 +110,7 @@ const sundownHealthyCategories: MenuCategory[] = [
       },
       {
         id: generateId('Chef Salad'),
-        name: 'Chef',
+        name: 'Chef Salad',
         category: 'Salad',
         section: 'Sundown Healthy',
       },
@@ -220,7 +220,7 @@ const sundownHealthyCategories: MenuCategory[] = [
         section: 'Sundown Healthy',
       },
       {
-        id: generateId('Tropical Smoothie Detox'),
+        id: generateId('Tropical Smoothie'),
         name: 'Tropical Smoothie',
         category: 'Detox/Smoothie Options',
         section: 'Sundown Healthy',
@@ -851,14 +851,14 @@ const crazyCornerCategories: MenuCategory[] = [
         section: 'Crazy Corner',
       },
       {
-        id: generateId('Tropical Smoothie Crazy'),
-        name: 'Tropical Smoothie',
+        id: generateId('Tropical Fruit Smoothie'),
+        name: 'Tropical Fruit Smoothie',
         category: 'Smoothies',
         section: 'Crazy Corner',
       },
       {
-        id: generateId('Peanut Butter Berry Smoothie Crazy'),
-        name: 'Peanut Butter Berry Smoothie',
+        id: generateId('PB Berry Smoothie'),
+        name: 'PB Berry Smoothie',
         category: 'Smoothies',
         section: 'Crazy Corner',
       },
@@ -942,8 +942,8 @@ const crazyCornerCategories: MenuCategory[] = [
     name: 'Wraps & Sandwiches',
     items: [
       {
-        id: generateId('Chessy Beef Burrito'),
-        name: 'Chessy Beef Burrito',
+        id: generateId('Cheesy Beef Burrito'),
+        name: 'Cheesy Beef Burrito',
         category: 'Wraps & Sandwiches',
         section: 'Crazy Corner',
       },
