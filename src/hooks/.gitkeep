@@ -1,0 +1,8 @@
+# Hooks Directory
+
+Place custom React hooks here.
+
+Example:
+- useLocalStorage.ts
+- useDebounce.ts
+- useFetch.ts

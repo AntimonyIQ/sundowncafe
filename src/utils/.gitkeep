@@ -1,0 +1,8 @@
+# Utils Directory
+
+Place utility functions and helpers here.
+
+Example:
+- formatters.ts
+- validators.ts
+- api.ts
