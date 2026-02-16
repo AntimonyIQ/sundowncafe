@@ -1,0 +1,8 @@
+# Types Directory
+
+Place TypeScript type definitions and interfaces here.
+
+Example:
+- api.types.ts
+- user.types.ts
+- menu.types.ts
