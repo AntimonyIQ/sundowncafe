@@ -80,11 +80,13 @@ export default function MenuItemCard({
                     </div>
                 </div>
 
+                {/*
                 {item.price && (
                     <div className="text-brand-orange font-bold font-display text-base mt-1">
                         ₦{item.price.toLocaleString()}
                     </div>
                 )}
+                */}
 
                 {item.description && (
                     <p className="text-xs text-stone-500 font-light leading-relaxed mt-2 line-clamp-2">

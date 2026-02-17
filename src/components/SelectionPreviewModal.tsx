@@ -15,7 +15,7 @@ export default function SelectionPreviewModal({
     selectedItems,
     onRemoveItem
 }: SelectionPreviewModalProps) {
-    const total = selectedItems.reduce((sum, item) => sum + (item.price || 0), 0)
+    // const total = selectedItems.reduce((sum, item) => sum + (item.price || 0), 0)
 
     return (
         <AnimatePresence>
@@ -89,11 +89,13 @@ export default function SelectionPreviewModal({
                                         </div>
                                         <div className="flex-1 min-w-0">
                                             <h4 className="font-display font-bold text-stone-800 text-sm truncate">{item.name}</h4>
+                                            {/*
                                             {item.price && (
                                                 <div className="text-brand-orange font-bold text-sm">
                                                     ₦{item.price.toLocaleString()}
                                                 </div>
                                             )}
+                                            */}
                                         </div>
                                         <button
                                             onClick={() => onRemoveItem(item.id)}
@@ -111,6 +113,7 @@ export default function SelectionPreviewModal({
                         </div>
 
                         {/* Footer */}
+                        {/*
                         {selectedItems.length > 0 && (
                             <div className="p-6 bg-white border-t border-stone-200">
                                 <div className="flex justify-between items-end mb-6">
@@ -124,6 +127,7 @@ export default function SelectionPreviewModal({
                                 </button>
                             </div>
                         )}
+                        */}
                     </motion.div>
                 </>
             )}

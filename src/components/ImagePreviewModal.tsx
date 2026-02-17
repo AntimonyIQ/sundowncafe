@@ -70,7 +70,7 @@ export default function ImagePreviewModal({
                                 {/* Text Content */}
                                 <div className="absolute bottom-0 left-0 right-0 p-8 text-center text-white space-y-4">
                                     <div>
-                                        <h3 className="text-3xl md:text-4xl font-display font-bold mb-2 drop-shadow-lg text-brand-orange">
+                                        <h3 className="text-3xl md:text-4xl font-display font-bold mb-2 drop-shadow-lg text-shadow-brand-orange">
                                             {item.name}
                                         </h3>
                                         {item.description && (
@@ -80,11 +80,13 @@ export default function ImagePreviewModal({
                                         )}
                                     </div>
 
+                                    {/*
                                     <div className="flex items-center justify-center gap-4 pt-2">
                                         <div className="bg-white/10 backdrop-blur-md px-6 py-2 rounded-full font-bold font-display text-2xl text-white border border-white/20">
                                             ₦{item.price?.toLocaleString()}
                                         </div>
                                     </div>
+                                    */}
 
                                     {/* Action Button */}
                                     <button
