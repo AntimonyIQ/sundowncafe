@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import type { MenuItem } from '../data/menu'
 
 interface MenuItemCardProps {
@@ -12,61 +13,51 @@ export default function MenuItemCard({
   onToggle,
 }: MenuItemCardProps) {
   return (
-    <button
+    <motion.div
       onClick={onToggle}
       className={`
-        w-full text-left p-4 rounded-lg border-2 transition-all duration-200
-        hover:shadow-md active:scale-[0.98]
-        ${
-          isSelected
-            ? 'border-brand-green bg-brand-green/10 shadow-sm'
-            : 'border-gray-200 bg-white hover:border-brand-orange/50'
+        cursor-pointer group flex flex-col items-center gap-3 p-6 rounded-lg
+        transition-all duration-200 text-center
+        ${isSelected
+          ? 'bg-brand-orange/5 border border-brand-orange/20 shadow-sm scale-[1.02]'
+          : 'hover:bg-stone-50 border border-transparent hover:border-stone-100'
         }
       `}
     >
-      <div className="flex items-start justify-between gap-3">
-        <div className="flex-1 min-w-0">
-          <h3
-            className={`font-semibold text-base mb-1 ${
-              isSelected ? 'text-brand-green' : 'text-brand-black'
-            }`}
-          >
+      <div className="flex-1 w-full">
+        <div className="flex flex-col items-center gap-1 mb-2">
+          <h4 className={`text-xl font-display font-bold ${isSelected ? 'text-brand-orange' : 'text-stone-800'}`}>
             {item.name}
-          </h3>
-          {item.description && (
-            <p className="text-sm text-gray-600 line-clamp-2">
-              {item.description}
-            </p>
+          </h4>
+          {item.price && (
+            <span className="text-stone-900 font-bold font-display text-lg">
+              ₦{item.price.toLocaleString()}
+            </span>
           )}
         </div>
-        <div className="flex-shrink-0">
-          <div
-            className={`
-            w-6 h-6 rounded-full border-2 flex items-center justify-center
-            transition-all duration-200
-            ${
-              isSelected
-                ? 'bg-brand-green border-brand-green'
-                : 'border-gray-300 bg-white'
-            }
-          `}
-          >
-            {isSelected && (
-              <svg
-                className="w-4 h-4 text-white"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M5 13l4 4L19 7"></path>
-              </svg>
-            )}
-          </div>
+
+        {item.description && (
+          <p className="text-sm text-stone-500 font-light leading-relaxed max-w-md mx-auto">
+            {item.description}
+          </p>
+        )}
+      </div>
+
+      <div className="mt-2">
+        <div className={`
+          w-6 h-6 rounded-full border flex items-center justify-center transition-colors
+          ${isSelected
+            ? 'bg-brand-orange border-brand-orange'
+            : 'border-stone-300 group-hover:border-brand-orange'
+          }
+        `}>
+          {isSelected && (
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          )}
         </div>
       </div>
-    </button>
+    </motion.div>
   )
 }

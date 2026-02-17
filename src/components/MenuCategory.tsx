@@ -13,12 +13,12 @@ export default function MenuCategory({
   onToggle,
 }: MenuCategoryProps) {
   return (
-    <div className="mb-8">
-      <h3 className="text-xl font-bold text-brand-black mb-4 flex items-center gap-2">
-        <span className="w-1 h-6 bg-brand-orange rounded-full"></span>
+    <div className="mb-8 last:mb-0 text-center">
+      <h3 className="text-xl font-display font-semibold text-brand-orange mb-6 border-b border-stone-100 pb-2 inline-block px-8">
         {category.name}
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <div className="grid grid-cols-1 gap-6">
         {category.items.map((item) => (
           <MenuItemCard
             key={item.id}

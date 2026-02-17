@@ -13,14 +13,16 @@ export default function MenuSection({
   onToggle,
 }: MenuSectionProps) {
   return (
-    <section className="mb-12">
-      <div className="mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-brand-black mb-2">
+    <div className="bg-white w-full max-w-2xl mx-auto">
+      {/* Section Header */}
+      <div className="mb-10 text-center">
+        <h2 className="text-3xl md:text-4xl font-display font-bold text-stone-800 mb-2">
           {section.name}
         </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-brand-orange to-brand-green rounded-full"></div>
+        <div className="h-1 w-24 bg-brand-orange/20 mx-auto rounded-full"></div>
       </div>
-      <div className="space-y-8">
+
+      <div className="space-y-12">
         {section.categories.map((category) => (
           <MenuCategory
             key={category.name}
@@ -30,6 +32,6 @@ export default function MenuSection({
           />
         ))}
       </div>
-    </section>
+    </div>
   )
 }
