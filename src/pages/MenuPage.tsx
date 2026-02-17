@@ -1,105 +1,229 @@
 import { useSearchParams } from 'react-router-dom'
+import { useState, useMemo } from 'react'
 import { menuData } from '../data/menu'
+import type { MenuSection as MenuSectionType, MenuItem } from '../data/menu'
 import { useMenuSelection } from '../hooks/useMenuSelection'
-import MenuSection from '../components/MenuSection'
-import { motion } from 'framer-motion'
+import MenuCategory from '../components/MenuCategory'
+import { motion, AnimatePresence } from 'framer-motion'
+import AfricanFrame from '../components/AfricanFrame'
+import ConfirmationModal from '../components/ConfirmationModal'
+import SelectionPreviewModal from '../components/SelectionPreviewModal'
+import ImagePreviewModal from '../components/ImagePreviewModal'
+
+// Helper to filter menu data based on search
+const filterMenu = (data: MenuSectionType[], query: string) => {
+    if (!query) return data
+
+    const lowerQuery = query.toLowerCase()
+
+    return data.map(section => {
+        const matchingCategories = section.categories.map(cat => {
+            const matchingItems = cat.items.filter(item =>
+                item.name.toLowerCase().includes(lowerQuery) ||
+                item.description?.toLowerCase().includes(lowerQuery)
+            )
+            return { ...cat, items: matchingItems }
+        }).filter(cat => cat.items.length > 0)
+
+        return { ...section, categories: matchingCategories }
+    }).filter(section => section.categories.length > 0)
+}
 
 export default function MenuPage() {
     const [searchParams] = useSearchParams()
     const seatParam = searchParams.get('seat')
-    const { isSelected, toggleItem, clearAll, selectedCount } = useMenuSelection()
+    const { isSelected, toggleItem, clearAll, selectedCount, selectedIds } = useMenuSelection()
+    const [isClearModalOpen, setIsClearModalOpen] = useState(false)
+    const [isSelectionModalOpen, setIsSelectionModalOpen] = useState(false)
+    const [previewItem, setPreviewItem] = useState<MenuItem | null>(null)
+    const [searchQuery, setSearchQuery] = useState('')
+
+    const filteredMenu = useMemo(() => filterMenu(menuData, searchQuery), [searchQuery])
+
+    const selectedItems = useMemo(() => {
+        const items: MenuItem[] = []
+        selectedIds.forEach(id => {
+            for (const section of menuData) {
+                for (const category of section.categories) {
+                    const found = category.items.find(i => i.id === id)
+                    if (found) {
+                        items.push(found)
+                        return // Found this id, move to next
+                    }
+                }
+            }
+        })
+        return items
+    }, [selectedIds])
 
     const handleClearAll = () => {
         if (selectedCount > 0) {
-            if (
-                window.confirm(
-                    `Are you sure you want to clear all ${selectedCount} selected items?`
-                )
-            ) {
-                clearAll()
-            }
+            setIsClearModalOpen(true)
         }
     }
 
+    const confirmClearAll = () => {
+        clearAll()
+        setIsClearModalOpen(false)
+    }
+
+    const handleImagePreview = (item: MenuItem) => {
+        setPreviewItem(item)
+    }
+
     return (
-        <div className="min-h-screen cafe-pattern-bg py-12 px-4 sm:px-6 lg:px-8 font-sans text-brand-black">
-            {/* Sticky Top Bar */}
-            <motion.div
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
-                className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200 shadow-sm"
-            >
-                <div className="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
-                    <div className="flex items-center gap-3">
-                        {seatParam && (
-                            <div className="bg-stone-800 text-stone-100 px-4 py-1.5 rounded-full font-display text-sm tracking-wide shadow-sm">
-                                {seatParam.includes('-') || seatParam.match(/[A-Z]/)
-                                    ? `TABLE ${seatParam}`
-                                    : `SEAT ${seatParam}`}
-                            </div>
-                        )}
-                        {selectedCount > 0 && (
-                            <motion.div
-                                initial={{ scale: 0.8, opacity: 0 }}
-                                animate={{ scale: 1, opacity: 1 }}
-                                className="bg-brand-orange text-white px-3 py-1.5 rounded-full font-bold text-sm shadow-md"
-                            >
-                                {selectedCount} items
-                            </motion.div>
-                        )}
+        <div className="h-screen flex flex-col bg-stone-50 overflow-hidden font-sans relative">
+            <div className="absolute inset-0 pointer-events-none z-0">
+                <AfricanFrame />
+            </div>
+
+            <SelectionPreviewModal
+                isOpen={isSelectionModalOpen}
+                onClose={() => setIsSelectionModalOpen(false)}
+                selectedItems={selectedItems}
+                onRemoveItem={toggleItem}
+            />
+
+            <ImagePreviewModal
+                item={previewItem}
+                isOpen={!!previewItem}
+                onClose={() => setPreviewItem(null)}
+                onToggleSelection={toggleItem}
+                isSelected={isSelected}
+            />
+
+            <ConfirmationModal
+                isOpen={isClearModalOpen}
+                title="Clear Selection?"
+                message={`Are you sure you want to remove all ${selectedCount} items from your selection?`}
+                onConfirm={confirmClearAll}
+                onCancel={() => setIsClearModalOpen(false)}
+                confirmText="Yes, Clear All"
+                cancelText="Keep Items"
+                isDestructive={true}
+            />
+
+            {/* --- Search & Control Header --- */}
+            <div className="flex-none pt-8 pb-4 px-6 z-30 bg-african-cream relative shadow-sm">
+                <div className="max-w-md mx-auto space-y-4">
+                    {/* Title & Seat Info */}
+                    <div className="flex justify-between items-center">
+                        <h1 className="text-3xl font-luxury font-bold text-african-dark-brown">
+                            Menu
+                        </h1>
+
+                        <div className="flex items-center gap-2">
+                            {seatParam && (
+                                <span className="text-xs font-bold font-sans bg-african-brown/10 text-african-brown px-3 py-1 rounded-full border border-african-brown/20">
+                                    {seatParam.includes('-') ? `Table ${seatParam}` : `Seat ${seatParam}`}
+                                </span>
+                            )}
+                            {selectedCount > 0 && (
+                                <button
+                                    onClick={handleClearAll}
+                                    className="text-xs font-bold text-african-red bg-red-50 px-3 py-1 rounded-full border border-red-100 hover:bg-red-100 transition-colors"
+                                >
+                                    Reset ({selectedCount})
+                                </button>
+                            )}
+                        </div>
                     </div>
 
-                    <button
-                        onClick={handleClearAll}
-                        disabled={selectedCount === 0}
-                        className={`
-                            text-sm uppercase tracking-wider font-bold py-2 px-4 rounded-lg transition-all
-                            ${selectedCount > 0
-                                ? 'bg-red-50 text-red-600 hover:bg-red-100'
-                                : 'text-gray-300 cursor-not-allowed'
-                            }
-                        `}
-                    >
-                        Reset
-                    </button>
-                </div>
-            </motion.div>
-
-            {/* Main Content Area */}
-            <div className="max-w-3xl mx-auto pt-16">
-
-                {/* Header Card */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="bg-white rounded-t-xl shadow-xl p-12 text-center border-t-8 border-brand-orange relative overflow-hidden"
-                >
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-orange via-yellow-400 to-brand-green opacity-50"></div>
-
-                    <h1 className="text-5xl md:text-6xl font-display font-black text-stone-800 mb-4 tracking-tight">
-                        Sundown<span className="text-brand-orange">.</span>
-                    </h1>
-                    <p className="text-xl text-stone-500 font-display italic">
-                        Taste the authentic flavors
-                    </p>
-                </motion.div>
-
-                {/* Menu Sections */}
-                <div className="bg-white shadow-xl rounded-b-xl overflow-hidden min-h-[50vh] px-8 pb-12">
-                    {menuData.map((section, index) => (
-                        <div key={section.name} className={index !== 0 ? "border-t border-dashed border-stone-200 mt-12 py-12" : "pb-12"}>
-                            <MenuSection
-                                section={section}
-                                isSelected={isSelected}
-                                onToggle={toggleItem}
-                            />
+                    {/* Search Input */}
+                    <div className="relative group">
+                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <svg className="h-5 w-5 text-stone-400 group-focus-within:text-brand-orange transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
                         </div>
-                    ))}
+                        <input
+                            type="text"
+                            placeholder="Search our flavors..."
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            className="block w-full pl-11 pr-4 py-3 bg-white border-2 border-transparent focus:border-african-gold
+                                       rounded-2xl text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-0
+                                       shadow-sm font-sans transition-all text-base"
+                        />
+                    </div>
                 </div>
-                {/* Footer */}
-                <div className="text-center text-stone-400 text-sm py-12 font-display italic">
-                    © {new Date().getFullYear()} Sundown Cafe
+            </div>
+
+            {/* --- Scrollable Content Tunnel --- */}
+            <div className="flex-1 relative overflow-hidden flex flex-col z-10">
+
+                {/* Tunnel Gradients */}
+                <div className="absolute top-0 left-0 right-0 h-8 bg-linear-to-b from-stone-50 to-transparent z-20 pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-stone-50 via-stone-50/80 to-transparent z-20 pointer-events-none" />
+
+                {/* Scroll Container */}
+                <div className="flex-1 overflow-y-auto pb-32 pt-6 px-4 scrollbar-hide">
+                    <div className="max-w-md mx-auto space-y-12">
+                        <AnimatePresence mode="wait">
+                            {filteredMenu.length > 0 ? (
+                                filteredMenu.map((section) => (
+                                    <motion.div 
+                                        key={section.name}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0 }}
+                                        className="space-y-8"
+                                    >
+                                        {section.categories.map(category => (
+                                            <MenuCategory
+                                                key={category.name}
+                                                category={category}
+                                                isSelected={isSelected}
+                                                onToggle={toggleItem}
+                                                onPreview={handleImagePreview}
+                                            />
+                                        ))}
+                                    </motion.div>
+                                ))
+                            ) : (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    className="text-center py-20 px-8"
+                                >
+                                    <p className="text-xl font-display text-stone-400 italic">
+                                        No flavors found matching "{searchQuery}"
+                                    </p>
+                                    <button
+                                        onClick={() => setSearchQuery('')}
+                                        className="mt-4 text-brand-orange font-bold text-sm hover:underline"
+                                    >
+                                        Clear Search
+                                    </button>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
                 </div>
+
+                {/* Floating Selection Button */}
+                <AnimatePresence>
+                    {selectedCount > 0 && (
+                        <div className="absolute bottom-6 left-0 right-0 z-30 flex justify-center px-4 pointer-events-none">
+                            <motion.button
+                                initial={{ y: 100, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                exit={{ y: 100, opacity: 0 }}
+                                onClick={() => setIsSelectionModalOpen(true)}
+                                className="bg-brand-orange text-white px-8 py-4 rounded-full shadow-xl shadow-orange-500/20 flex items-center gap-3 active:scale-95 transition-all w-full max-w-xs pointer-events-auto backdrop-blur-md border border-white/20"
+                            >
+                                <div className="bg-white/20 px-3 py-1 rounded-full text-sm font-bold shadow-inner">
+                                    {selectedCount}
+                                </div>
+                                <span className="flex-1 text-center font-bold text-lg font-display tracking-wide">View Selection</span>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </motion.button>
+                        </div>
+                    )}
+                </AnimatePresence>
             </div>
         </div>
     )

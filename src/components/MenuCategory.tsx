@@ -1,33 +1,41 @@
-import type { MenuCategory as MenuCategoryType } from '../data/menu'
+import type { MenuCategory as MenuCategoryType, MenuItem } from '../data/menu'
 import MenuItemCard from './MenuItemCard'
+import StylishDivider from './StylishDivider'
 
 interface MenuCategoryProps {
-  category: MenuCategoryType
-  isSelected: (itemId: string) => boolean
-  onToggle: (itemId: string) => void
+    category: MenuCategoryType
+    isSelected: (itemId: string) => boolean
+    onToggle: (itemId: string) => void
+    onPreview: (item: MenuItem) => void
 }
 
 export default function MenuCategory({
-  category,
-  isSelected,
-  onToggle,
+    category,
+    isSelected,
+    onToggle,
+    onPreview,
 }: MenuCategoryProps) {
-  return (
-    <div className="mb-8 last:mb-0 text-center">
-      <h3 className="text-xl font-display font-semibold text-brand-orange mb-6 border-b border-stone-100 pb-2 inline-block px-8">
-        {category.name}
-      </h3>
+    return (
+        <div className="mb-12 last:mb-0 text-center relative">
+            <h3 className="text-2xl font-luxury font-bold text-african-dark-brown mb-8 inline-block px-8 relative">
+                {category.name}
+            </h3>
 
-      <div className="grid grid-cols-1 gap-6">
-        {category.items.map((item) => (
-          <MenuItemCard
-            key={item.id}
-            item={item}
-            isSelected={isSelected(item.id)}
-            onToggle={() => onToggle(item.id)}
-          />
-        ))}
-      </div>
-    </div>
-  )
+            <div className="grid grid-cols-1 gap-4 px-4">
+                {category.items.map((item) => (
+                    <MenuItemCard
+                        key={item.id}
+                        item={item}
+                        isSelected={isSelected(item.id)}
+                        onToggle={() => onToggle(item.id)}
+                        onPreview={() => onPreview(item)}
+                    />
+                ))}
+            </div>
+
+            <div className="mt-12 px-4">
+                <StylishDivider color="#7F5539" className="w-full h-auto" />
+            </div>
+        </div>
+    )
 }

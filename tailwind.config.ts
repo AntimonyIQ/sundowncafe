@@ -24,6 +24,7 @@ export default {
             fontFamily: {
                 sans: ['Lato', 'sans-serif'],
                 display: ['Playfair Display', 'serif'],
+                luxury: ['Cinzel', 'serif'],
             },
             container: {
                 center: true,

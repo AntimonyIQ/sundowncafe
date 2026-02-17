@@ -7,11 +7,8 @@ import { router } from './routes'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Suspense fallback={
-      <div className="flex items-center justify-center min-h-screen bg-white">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-orange mx-auto mb-4"></div>
-          <p className="text-brand-black">Loading...</p>
-        </div>
+      <div className="flex items-center justify-center h-screen w-screen bg-white">
+        <div className="w-10 h-10 border-4 border-stone-100 border-t-brand-orange rounded-full animate-spin"></div>
       </div>
     }>
       <RouterProvider router={router} />

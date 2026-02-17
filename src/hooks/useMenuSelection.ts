@@ -49,11 +49,13 @@ export function useMenuSelection() {
     [selectedIds]
   )
 
+  const selectedCount = selectedIds.size
+
   return {
     selectedIds,
     toggleItem,
     clearAll,
     isSelected,
-    selectedCount: selectedIds.size,
+    selectedCount
   }
 }

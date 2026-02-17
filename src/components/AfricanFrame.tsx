@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 interface AfricanFrameProps {
-    children: ReactNode;
+    children?: ReactNode;
 }
 
 const KentePattern = () => (
