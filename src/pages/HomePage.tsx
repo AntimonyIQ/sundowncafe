@@ -58,11 +58,9 @@ export default function HomePage() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.5 }}
-                    className="absolute top-6 left-6 md:top-10 md:left-10"
+                    className="absolute top-1 left-6 md:top-1 md:left-10"
                 >
-                    <h1 className="text-xl md:text-2xl font-luxury font-bold tracking-[0.3em] text-white/90">
-                        SUNDOWN CAFE
-                    </h1>
+                    <img src="/icon.png" alt="Sundown Cafe Logo" className='w-20 md:w-32 h-auto' />
                 </motion.div>
 
                 {/* Top Right - Social/Contact Icon */}
