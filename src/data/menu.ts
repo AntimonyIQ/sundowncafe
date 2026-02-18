@@ -1,3 +1,6 @@
+// import salad from "../assets/images/salad.png";
+import JellofPowerBowl from '../assets/images/rice-bowl.png';
+
 export interface MenuItem {
     id: string
     name: string
@@ -36,6 +39,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 available: true,
                 category: 'Wholesome Plates',
                 section: 'Sundown Healthy',
+                image: 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RlYWslMjBtYXNoZWQlMjBwb3RhdG9lc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
             },
             {
                 id: generateId('Steak Mashed Potatoes'),
@@ -44,6 +48,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 available: true,
                 category: 'Wholesome Plates',
                 section: 'Sundown Healthy',
+                image: 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RlYWslMjBtYXNoZWQlMjBwb3RhdG9lc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
             },
             {
                 id: generateId('Jollof Power Bowl'),
@@ -52,6 +57,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 available: true,
                 category: 'Wholesome Plates',
                 section: 'Sundown Healthy',
+                image: JellofPowerBowl,
             },
             {
                 id: generateId('Seared Salmon Citrus Greens'),
@@ -60,6 +66,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 available: true,
                 category: 'Wholesome Plates',
                 section: 'Sundown Healthy',
+                image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2VhcmVkJTIwc2FsbW9uJTIwY2l0cnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
             },
             {
                 id: generateId('Grilled Chicken Teriyaki Bowl'),
@@ -74,6 +81,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 available: true,
                 category: 'Wholesome Plates',
                 section: 'Sundown Healthy',
+                image: 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RlYWslMjBtYXNoZWQlMjBwb3RhdG9lc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
             },
         ],
     },
