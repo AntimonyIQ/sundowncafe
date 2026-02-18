@@ -5,7 +5,7 @@ import type { MenuSection as MenuSectionType, MenuItem } from '../data/menu'
 import { useMenuSelection } from '../hooks/useMenuSelection'
 import MenuCategory from '../components/MenuCategory'
 import { motion, AnimatePresence } from 'framer-motion'
-import AfricanFrame from '../components/AfricanFrame'
+// import AfricanFrame from '../components/AfricanFrame'
 import ConfirmationModal from '../components/ConfirmationModal'
 import SelectionPreviewModal from '../components/SelectionPreviewModal'
 import ImagePreviewModal from '../components/ImagePreviewModal'
@@ -72,12 +72,23 @@ export default function MenuPage() {
     }
 
     return (
-        <div className="h-screen flex flex-col bg-stone-50 overflow-hidden font-sans relative">
-            <div className="absolute inset-0 pointer-events-none z-0">
-                <AfricanFrame />
-            </div>
+        <div className="h-screen w-full relative overflow-hidden flex items-center justify-center font-sans">
+            {/* Page Background Image */}
+            <img
+                src="/cardbg.png"
+                alt="Background"
+                className="absolute inset-0 w-full h-full object-cover z-0"
+            />
 
-            <SelectionPreviewModal
+            {/* Dimming overlay if needed for readability */}
+            <div className="absolute inset-0 bg-black/50 z-0" />
+
+            {/* Old African Frame - Removed as requested */}
+            {/* <div className="fixed inset-0 pointer-events-none z-0 opacity-10">
+                <AfricanFrame />
+            </div> */}
+
+            <SelectionPreviewModal 
                 isOpen={isSelectionModalOpen}
                 onClose={() => setIsSelectionModalOpen(false)}
                 selectedItems={selectedItems}
@@ -103,71 +114,82 @@ export default function MenuPage() {
                 isDestructive={true}
             />
 
-            {/* --- Search & Control Header --- */}
-            <div className="flex-none pt-8 pb-4 px-6 z-30 bg-african-cream relative shadow-sm">
-                <div className="max-w-md mx-auto space-y-4">
-                    {/* Title & Seat Info */}
-                    <div className="flex justify-between items-center">
-                        <h1 className="text-3xl font-luxury font-bold text-african-dark-brown">
-                            Menu
-                        </h1>
 
-                        <div className="flex items-center gap-2">
+            {/* Main Card Container */}
+            <div className="max-w-2xl w-full mx-auto relative z-10 h-[92vh] md:h-[96vh] flex flex-col my-4">
+
+                {/* SVG Border Frame - Absolute Positioned */}
+                <img
+                    src="/1210514.svg"
+                    alt="Menu Frame"
+                    className="absolute inset-0 w-full h-full pointer-events-none select-none z-20"
+                    style={{ filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.3))' }}
+                />
+
+                {/* Content Container - Padded to fit inside the frame */}
+                <div className="relative z-30 flex flex-col w-full h-full bg-white/95 backdrop-blur-sm overflow-hidden" style={{ margin: '20px', width: 'calc(100% - 40px)', height: 'calc(100% - 40px)' }}>
+
+                    {/* Header Section */}
+                    <div className="p-6 md:p-8 space-y-6 flex-none bg-transparent relative z-20">
+                        <div className="text-center space-y-2">
+                            <h1 className="text-4xl font-display font-bold text-stone-900 tracking-wider">
+                                SUNDOWN MENU
+                            </h1>
                             {seatParam && (
-                                <span className="text-xs font-bold font-sans bg-african-brown/10 text-african-brown px-3 py-1 rounded-full border border-african-brown/20">
+                                <div className="inline-block bg-african-cream/30 text-african-brown text-xs font-bold px-3 py-1 uppercase tracking-widest border border-african-cream">
                                     {seatParam.includes('-') ? `Table ${seatParam}` : `Seat ${seatParam}`}
-                                </span>
-                            )}
-                            {selectedCount > 0 && (
-                                <button
-                                    onClick={handleClearAll}
-                                    className="text-xs font-bold text-african-red bg-red-50 px-3 py-1 rounded-full border border-red-100 hover:bg-red-100 transition-colors"
-                                >
-                                    Reset ({selectedCount})
-                                </button>
+                                </div>
                             )}
                         </div>
-                    </div>
 
-                    {/* Search Input */}
+                        {/* Search Bar */}
                     <div className="relative group">
                         <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                            <svg className="h-5 w-5 text-stone-400 group-focus-within:text-brand-orange transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                <svg className="h-5 w-5 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
                         </div>
                         <input
                             type="text"
-                            placeholder="Search our flavors..."
+                                placeholder="SEARCH FLAVORS..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="block w-full pl-11 pr-4 py-3 bg-white border-2 border-transparent focus:border-african-gold
-                                       rounded-2xl text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-0
-                                       shadow-sm font-sans transition-all text-base"
+                                className="block w-full pl-12 pr-4 py-4 bg-white border border-stone-300 focus:border-brand-orange
+                                       rounded-none text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-0
+                                       font-sans text-sm tracking-wide uppercase transition-colors"
                         />
                     </div>
-                </div>
-            </div>
 
-            {/* --- Scrollable Content Tunnel --- */}
-            <div className="flex-1 relative overflow-hidden flex flex-col z-10">
+                        {/* Reset Button */}
+                        {selectedCount > 0 && (
+                            <div className="flex justify-end">
+                                <button
+                                    onClick={handleClearAll}
+                                    className="text-xs font-bold text-african-red hover:text-red-700 uppercase tracking-widest transition-colors flex items-center gap-2"
+                                >
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path></svg>
+                                    RESET SELECTION ({selectedCount})
+                                </button>
+                            </div>
+                        )}
+                    </div>
 
-                {/* Tunnel Gradients */}
-                <div className="absolute top-0 left-0 right-0 h-8 bg-linear-to-b from-stone-50 to-transparent z-20 pointer-events-none" />
-                <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-stone-50 via-stone-50/80 to-transparent z-20 pointer-events-none" />
+                    {/* Content Container with Tunnel Effect */}
+                    <div className="flex-1 relative overflow-hidden flex flex-col px-6 md:px-8">
+                        {/* Tunnel Gradients */}
+                        <div className="absolute top-0 left-0 right-0 h-8 bg-linear-to-b from-white to-transparent z-10 pointer-events-none" />
+                        <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
-                {/* Scroll Container */}
-                <div className="flex-1 overflow-y-auto pb-32 pt-6 px-4 scrollbar-hide">
-                    <div className="max-w-md mx-auto space-y-12">
+                        {/* Scrollable List */}
+                        <div className="flex-1 overflow-y-auto pb-32 pt-4 scrollbar-hide">
                         <AnimatePresence mode="wait">
                             {filteredMenu.length > 0 ? (
                                 filteredMenu.map((section) => (
                                     <motion.div 
                                         key={section.name}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0 }}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
                                         exit={{ opacity: 0 }}
-                                        className="space-y-8"
                                     >
                                         {section.categories.map(category => (
                                             <MenuCategory
@@ -181,15 +203,15 @@ export default function MenuPage() {
                                     </motion.div>
                                 ))
                             ) : (
-                                <motion.div
-                                    initial={{ opacity: 0 }}
+                                        <motion.div
+                                            initial={{ opacity: 0 }} 
                                     animate={{ opacity: 1 }}
                                     className="text-center py-20 px-8"
                                 >
                                     <p className="text-xl font-display text-stone-400 italic">
                                         No flavors found matching "{searchQuery}"
                                     </p>
-                                    <button
+                                            <button 
                                         onClick={() => setSearchQuery('')}
                                         className="mt-4 text-brand-orange font-bold text-sm hover:underline"
                                     >
@@ -200,31 +222,32 @@ export default function MenuPage() {
                         </AnimatePresence>
                     </div>
                 </div>
-
-                {/* Floating Selection Button */}
-                <AnimatePresence>
-                    {selectedCount > 0 && (
-                        <div className="absolute bottom-6 left-0 right-0 z-30 flex justify-center px-4 pointer-events-none">
-                            <motion.button
-                                initial={{ y: 100, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                exit={{ y: 100, opacity: 0 }}
-                                onClick={() => setIsSelectionModalOpen(true)}
-                                className="bg-brand-orange text-white px-8 py-4 rounded-full shadow-xl shadow-orange-500/20 flex items-center gap-3 active:scale-95 transition-all w-full max-w-xs pointer-events-auto backdrop-blur-md border border-white/20"
-                            >
-                                <div className="bg-white/20 px-3 py-1 rounded-full text-sm font-bold shadow-inner">
-                                    {selectedCount}
-                                </div>
-                                <span className="flex-1 text-center font-bold text-lg font-display tracking-wide">View Selection</span>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                </svg>
-                            </motion.button>
-                        </div>
-                    )}
-                </AnimatePresence>
+                </div>
             </div>
+
+            {/* Floating Selection Button */}
+            <AnimatePresence>
+                {selectedCount > 0 && (
+                    <div className="fixed bottom-6 left-0 right-0 z-30 flex justify-center px-4 pointer-events-none">
+                        <motion.button
+                            initial={{ y: 100, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: 100, opacity: 0 }}
+                            onClick={() => setIsSelectionModalOpen(true)}
+                            className="bg-brand-orange text-white px-8 py-4 shadow-xl shadow-stone-900/20 flex items-center gap-4 active:scale-95 transition-all w-full max-w-xs pointer-events-auto border border-stone-900/10 rounded-none uppercase tracking-widest font-bold text-sm"
+                        >
+                            <div className="bg-white text-brand-orange px-2 py-0.5 text-xs font-bold">
+                                {selectedCount}
+                            </div>
+                            <span className="flex-1 text-center">View Selection</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </motion.button>
+                    </div>
+                )}
+            </AnimatePresence>
         </div>
     )
 }

@@ -21,14 +21,15 @@ export default function MenuCategory({
                 {category.name}
             </h3>
 
-            <div className="grid grid-cols-1 gap-4 px-4">
-                {category.items.map((item) => (
+            <div className="grid grid-cols-1 divide-y divide-stone-200">
+                {category.items.map((item, index) => (
                     <MenuItemCard
                         key={item.id}
                         item={item}
                         isSelected={isSelected(item.id)}
                         onToggle={() => onToggle(item.id)}
                         onPreview={() => onPreview(item)}
+                        isLast={index === category.items.length - 1}
                     />
                 ))}
             </div>
