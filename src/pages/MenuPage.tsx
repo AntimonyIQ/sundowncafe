@@ -133,7 +133,7 @@ export default function MenuPage() {
                     <div className="p-6 md:p-8 space-y-6 flex-none bg-transparent relative z-20">
                         <div className="text-center space-y-2">
                             <h1 className="text-4xl font-display font-bold text-stone-900 tracking-wider">
-                                SUNDOWN MENU
+                                <span className='text-african-yellow'>SUNDOWN</span> MENU
                             </h1>
                             {seatParam && (
                                 <div className="inline-block bg-african-cream/30 text-african-brown text-xs font-bold px-3 py-1 uppercase tracking-widest border border-african-cream">

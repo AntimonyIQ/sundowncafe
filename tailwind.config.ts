@@ -11,6 +11,7 @@ export default {
                 'brand-orange': '#FF6B35',
                 'brand-black': '#1A1A1A',
                 'brand-green': '#4CAF50',
+                'brand-beige': '#F5FRDC',
                 'african-red': '#D62828',
                 'african-yellow': '#F77F00',
                 'african-gold': '#FCBF49',

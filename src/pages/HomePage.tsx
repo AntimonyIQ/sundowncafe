@@ -120,8 +120,8 @@ export default function HomePage() {
                     <div className="flex items-center gap-3">
                         <MapPinIcon />
                         <div className="flex flex-col">
-                            <span className="font-luxury text-white group-hover:text-brand-orange transition-colors">VICTORIA ISLAND</span>
-                            <span className="opacity-70">LAGOS, NIGERIA</span>
+                            <span className="font-luxury text-white group-hover:text-brand-orange transition-colors">149 Woji Road</span>
+                            <span className="opacity-70">GRA, Port-Harcourt</span>
                         </div>
                     </div>
                 </motion.div>
