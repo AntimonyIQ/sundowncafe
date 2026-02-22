@@ -1,5 +1,137 @@
 // import salad from "../assets/images/salad.png";
 import JellofPowerBowl from '../assets/images/rice-bowl.png';
+import Cheeseburger from '../assets/images/meals/Cheeseburger.png';
+import GrilledChickenClubSandwich from '../assets/images/meals/Grilled-Chicken-Club-Sandwich.png';
+import BagelDelight from '../assets/images/meals/Bagel-Delight.png';
+import SpecialTacoBeeffold from '../assets/images/meals/Special-Taco-Beeffold.png';
+import CroissantChickenSandwich from '../assets/images/meals/Croissant-Chicken-Sandwich.png';
+import ChessyBeefBurrito from '../assets/images/meals/Chessy-Beef-Burrito.png';
+import CafféLatte from "../assets/images/meals/Caffé-Latte.png";
+import IcedAmericano from "../assets/images/meals/Iced-Americano.png";
+import Espresso from "../assets/images/meals/Espresso.png";
+import Americano from "../assets/images/meals/Americano.png";
+import IcedCappuccino from "../assets/images/meals/Iced-Cappuccino.png";
+import HotChocolate from "../assets/images/meals/Hot-Chocolate.png";
+import ChocolateDreamRichChocolateWhippedCreamChocolateChips from "../assets/images/meals/Chocolate-Dream-Rich-Chocolate-whipped-cream-chocolate-Chips.png";
+import CookiesAndCreamIceCreamCrushedOreoChocolateSauce from "../assets/images/meals/CookiesAndCreamIceCreamCrushedOreoChocolateSauce.png";
+import StrawberryBlissFreshStrawberriesVanillaIceCream from "../assets/images/meals/StrawberryBlissFreshStrawberriesVanillaIceCream.png";
+import SmoothVanillaCaramelDrizzle from "../assets/images/meals/SmoothVanillaCaramelDrizzle.png";
+import PeanutButterBerrySmoothie from "../assets/images/meals/PeanutButterBerrySmoothie.png";
+import TropicalFruitSmoothie from "../assets/images/meals/TropicalFruitSmoothie.png";
+import BananaAlmondCado from "../assets/images/meals/BananaAlmondCado.png";
+import DoubleBerryBlast from "../assets/images/meals/DoubleBerryBlast.png";
+import PeanutButterBananaSmoothie from "../assets/images/meals/PeanutButterBananaSmoothie.png";
+import ChocolateBerrySmoothie from "../assets/images/meals/ChocolateBerrySmoothie.png";
+import FriedPlantains from "../assets/images/meals/FriedPlantains.png";
+import FrenchFries from "../assets/images/meals/FrenchFries.png";
+import BuffaloSauce from "../assets/images/meals/BuffaloSauce.png";
+import AioliSauce from "../assets/images/meals/AioliSauce.png";
+import Guacamole from "../assets/images/meals/Guacamole.png";
+import Salsa from '../assets/images/meals/Salsa.png';
+import PepperSauce from "../assets/images/meals/PepperSauce.png";
+import JamaicaGoatSauce from "../assets/images/meals/JamaicaGoatSauce.png";
+import Brownies from "../assets/images/meals/Brownies.png";
+import RedVelvetCake from "../assets/images/meals/RedVelvetCake.png";
+import FruitBowls from "../assets/images/meals/FruitBowls.png";
+import WafflesAndIceCream from "../assets/images/meals/WafflesAndIceCream.png";
+import IceCreamSundae from "../assets/images/meals/IceCreamSundae.png";
+import YogurtParfait from "../assets/images/meals/YogurtParfait.png";
+import FriedNoodles from "../assets/images/meals/FriedNoodles.png";
+import PepperSoupNoodles from "../assets/images/meals/PepperSoupNoodles.png";
+import SingaporeNoodles from "../assets/images/meals/SingaporeNoodles.png";
+import Turkey from "../assets/images/meals/Turkey.png";
+import LemonButterSalmon from "../assets/images/meals/LemonButterSalmon.png";
+import GrilledSteak from "../assets/images/meals/GrilledSteak.png";
+import ButterflyPrawns from "../assets/images/meals/ButterflyPrawns.png";
+import BraisedLambChops from "../assets/images/meals/BraisedLambChops.png";
+import BeefKebab from "../assets/images/meals/BeefKebab.png";
+import ChickenKebab from "../assets/images/meals/ChickenKebab.png";
+import PepperedSnail from "../assets/images/meals/PepperedSnail.png";
+import ChickenPepperedChicken from "../assets/images/meals/ChickenPepperedChicken.png";
+import SeafoodBoil from "../assets/images/meals/SeafoodBoil.png";
+import Sushi from "../assets/images/meals/Sushi.png";
+import PrawnProvencal from "../assets/images/meals/PrawnProvencal.png";
+import SteakandMashedPotatoes from "../assets/images/meals/SteakandMashedPotatoes.png";
+import MarryMePasta from "../assets/images/meals/MarryMePasta.png";
+import PastaAllaVodka from "../assets/images/meals/PastaAllaVodka.png";
+import CreamyFettuccineAlfredo from "../assets/images/meals/CreamyFettuccineAlfredo.png";
+import LinguineCarbonara from "../assets/images/meals/LinguineCarbonara.png";
+import SeafoodPasta from "../assets/images/meals/SeafoodPasta.png";
+import PastaBolognese from "../assets/images/meals/PastaBolognese.png";
+import AsunFieryPasta from "../assets/images/meals/AsunFieryPasta.png";
+import SpicyAsunRice from "../assets/images/meals/SpicyAsunRice.png";
+import DirtyRiceBowl from "../assets/images/meals/DirtyRiceBowl.png";
+import CoconutRiceSpecial from "../assets/images/meals/CoconutRiceSpecial.png";
+import JambalayaFriedRice from "../assets/images/meals/JambalayaFriedRice.png";
+import ChineseFriedRice from "../assets/images/meals/ChineseFriedRice.png";
+import SpringRoll from "../assets/images/meals/SpringRoll.png";
+import Samosa from "../assets/images/meals/Samosa.png";
+import Gizdodo from "../assets/images/meals/Gizdodo.png";
+import BuffaloChickenBites from "../assets/images/meals/BuffaloChickenBites.png";
+import CalamariRings from "../assets/images/meals/CalamariRings.png";
+import AsunTostadas from "../assets/images/meals/AsunTostadas.png";
+import ChickenBBQWings from "../assets/images/meals/ChickenBBQWings.png";
+import SardineFrenchToast from "../assets/images/meals/SardineFrenchToast.png";
+import ClassicFrenchToast from "../assets/images/meals/ClassicFrenchToast.png";
+import HeartyOatmealPorridge from "../assets/images/meals/HeartyOatmealPorridge.png";
+import MorningMashup from "../assets/images/meals/MorningMashup.png";
+import ClassicAmericanBreakfast from "../assets/images/meals/ClassicAmericanBreakfast.png";
+import EnglishBreakfast from "../assets/images/meals/EnglishBreakfast.png";
+import PrawnSauce from "../assets/images/meals/PrawnSauce.png";
+import ButterChickenAndGarlicNaanBread from "../assets/images/meals/ButterChickenAndGarlicNaanBread.png";
+import SweetSourChicken from "../assets/images/meals/SweetSourChicken.png";
+import ChickenCurrySauce from "../assets/images/meals/ChickenCurrySauce.png";
+import ShreddedBeefSauce from "../assets/images/meals/ShreddedBeefSauce.png";
+import BrainBoost from "../assets/images/meals/BrainBoost.png";
+import CitrusGlo from "../assets/images/meals/CitrusGlo.png";
+import VitaminSee from "../assets/images/meals/VitaminSee.png";
+import AllTheGreens from "../assets/images/meals/AllTheGreens.png";
+import Gem from "../assets/images/meals/Gem.png";
+import PeanutButterBliss from "../assets/images/meals/PeanutButterBliss.png";
+import BerryDairy from "../assets/images/meals/BerryDairy.png";
+import PeanutButterBerry from "../assets/images/meals/PeanutButterBerry.png";
+import CBreeze from "../assets/images/meals/CBreeze.png";
+import StrawberryStinger from "../assets/images/meals/StrawberryStinger.png";
+import ChaiLatte from "../assets/images/meals/ChaiLatte.png";
+import LemonGingerZinger from "../assets/images/meals/LemonGingerZinger.png";
+import TurmericTango from "../assets/images/meals/TurmericTango.png";
+import FlooFighter from "../assets/images/meals/FlooFighter.png";
+import FlooShot from "../assets/images/meals/FlooShot.png";
+import GingerShot from "../assets/images/meals/GingerShot.png";
+import DailyGreens from "../assets/images/meals/DailyGreens.png";
+import LemonCucumberCooler from "../assets/images/meals/LemonCucumberCooler.png";
+import SpicedRootTonic from "../assets/images/meals/SpicedRootTonic.png";
+import FlooJuice from "../assets/images/meals/FlooJuice.png";
+import GrilledFish from "../assets/images/meals/GrilledFish.png";
+import GrilledChickenBreasts from "../assets/images/meals/GrilledChickenBreasts.png";
+import TropicalSmoothie from "../assets/images/meals/TropicalSmoothie.png";
+import MangoSpinachSmoothie from "../assets/images/meals/MangoSpinachSmoothie.png";
+import AvocadoGreenSmoothie from "../assets/images/meals/AvocadoGreenSmoothie.png";
+import GreenBoostSmoothie from "../assets/images/meals/GreenBoostSmoothie.png";
+import BerryBliss from "../assets/images/meals/BerryBliss.png";
+import SeafoodSpaghettiMarinara from "../assets/images/meals/SeafoodSpaghettiMarinara.png";
+import VegetableAglioolio from "../assets/images/meals/VegetableAglioolio.png";
+import PestoPasta from "../assets/images/meals/PestoPasta.png";
+import WholeGrainClubSandwich from "../assets/images/meals/WholeGrainClubSandwich.png";
+import WholeGrainBagelSandwich from "../assets/images/meals/WholeGrainBagelSandwich.png";
+import WholeGrainChickenWrap from "../assets/images/meals/WholeGrainChickenWrap.png";
+import FreshSaladWrap from "../assets/images/meals/FreshSaladWrap.png";
+import AvocadoDelightWrap from "../assets/images/meals/AvocadoDelightWrap.png";
+import GrilledFishTacos from "../assets/images/meals/GrilledFishTacos.png";
+import ClassicWaldorfSalad from "../assets/images/meals/ClassicWaldorfSalad.png";
+import SmokedSalmonSalad from "../assets/images/meals/SmokedSalmonSalad.png";
+import Coleslaw from "../assets/images/meals/Coleslaw.png";
+import ChickenVegetable from "../assets/images/meals/ChickenVegetable.png";
+import MediterraneanSalad from "../assets/images/meals/MediterraneanSalad.png";
+import HookedonGreens from "../assets/images/meals/HookedonGreens.png";
+import ClassicCaesarSalad from "../assets/images/meals/ClassicCaesarSalad.png";
+import KaleAndQuinoaCrunch from "../assets/images/meals/KaleAndQuinoaCrunch.png";
+import GrilledChickenBBQ from "../assets/images/meals/GrilledChickenBBQ.png";
+import SteakMashedPotatoes from "../assets/images/meals/SteakMashedPotatoes.png";
+import GrilledTilapia from "../assets/images/meals/GrilledTilapia.png";
+import ChefSalad from "../assets/images/meals/ChefSalad.png";
+import SearedSalmonAndCitrusGreens from "../assets/images/meals/SearedSalmonAndCitrusGreens.png";
+import GrilledChickenTeriyakiBowl from "../assets/images/meals/GrilledChickenTeriyakiBowl.png";
 
 export interface MenuItem {
     id: string
@@ -39,7 +171,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 available: true,
                 category: 'Wholesome Plates',
                 section: 'Sundown Healthy',
-                image: 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RlYWslMjBtYXNoZWQlMjBwb3RhdG9lc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
+                image: GrilledTilapia
             },
             {
                 id: generateId('Steak Mashed Potatoes'),
@@ -48,7 +180,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 available: true,
                 category: 'Wholesome Plates',
                 section: 'Sundown Healthy',
-                image: 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RlYWslMjBtYXNoZWQlMjBwb3RhdG9lc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
+                image: SteakMashedPotatoes,
             },
             {
                 id: generateId('Jollof Power Bowl'),
@@ -66,7 +198,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 available: true,
                 category: 'Wholesome Plates',
                 section: 'Sundown Healthy',
-                image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2VhcmVkJTIwc2FsbW9uJTIwY2l0cnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
+                image: GrilledChickenTeriyakiBowl,
             },
             {
                 id: generateId('Grilled Chicken Teriyaki Bowl'),
@@ -74,6 +206,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 available: true,
                 category: 'Wholesome Plates',
                 section: 'Sundown Healthy',
+                image: SearedSalmonAndCitrusGreens,
             },
             {
                 id: generateId('Grilled Chicken BBQ'),
@@ -81,7 +214,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 available: true,
                 category: 'Wholesome Plates',
                 section: 'Sundown Healthy',
-                image: 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RlYWslMjBtYXNoZWQlMjBwb3RhdG9lc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
+                image: GrilledChickenBBQ
             },
         ],
     },
@@ -93,54 +226,63 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Classic Caesar Salad',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                image: ClassicCaesarSalad,
             },
             {
                 id: generateId('Kale Quinoa Crunch'),
                 name: 'Kale & Quinoa Crunch',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                image: KaleAndQuinoaCrunch,
             },
             {
                 id: generateId('Hooked on Greens'),
                 name: 'Hooked on Greens',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                image: HookedonGreens,
             },
             {
                 id: generateId('Mediterranean Salad'),
                 name: 'Mediterranean Salad',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                image: MediterraneanSalad,
             },
             {
                 id: generateId('Chicken Vegetable'),
                 name: 'Chicken Vegetable',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                image: ChickenVegetable,
             },
             {
                 id: generateId('Coleslaw'),
                 name: 'Coleslaw',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                image: Coleslaw,
             },
             {
                 id: generateId('Chef Salad'),
                 name: 'Chef Salad',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                image: ChefSalad,
             },
             {
                 id: generateId('Smoked Salmon Salad'),
                 name: 'Smoked Salmon Salad',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                image: SmokedSalmonSalad,
             },
             {
                 id: generateId('Classic Waldorf Salad'),
                 name: 'Classic Waldorf Salad',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                image: ClassicWaldorfSalad,
             },
         ],
     },
@@ -152,36 +294,42 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Grilled Fish Tacos',
                 category: 'Wraps & Sandwiches',
                 section: 'Sundown Healthy',
+                image: GrilledFishTacos,
             },
             {
                 id: generateId('Avocado Delight Wrap'),
                 name: 'Avocado Delight Wrap',
                 category: 'Wraps & Sandwiches',
                 section: 'Sundown Healthy',
+                image: AvocadoDelightWrap,
             },
             {
                 id: generateId('Fresh Salad Wrap'),
                 name: 'Fresh Salad Wrap',
                 category: 'Wraps & Sandwiches',
                 section: 'Sundown Healthy',
+                image: FreshSaladWrap,
             },
             {
                 id: generateId('Whole Grain Chicken Wrap'),
                 name: 'Whole Grain Chicken Wrap',
                 category: 'Wraps & Sandwiches',
                 section: 'Sundown Healthy',
+                image: WholeGrainChickenWrap,
             },
             {
                 id: generateId('Whole Grain Bagel Sandwich'),
                 name: 'Whole Grain Bagel Sandwich',
                 category: 'Wraps & Sandwiches',
                 section: 'Sundown Healthy',
+                image: WholeGrainBagelSandwich,
             },
             {
                 id: generateId('Whole Grain Club Sandwich'),
                 name: 'Whole Grain Club Sandwich',
                 category: 'Wraps & Sandwiches',
                 section: 'Sundown Healthy',
+                image: WholeGrainClubSandwich,
             },
         ],
     },
@@ -193,18 +341,21 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Pesto Pasta',
                 category: 'Pasta',
                 section: 'Sundown Healthy',
+                image: PestoPasta,
             },
             {
                 id: generateId('Vegetable Aglio-olio'),
                 name: 'Vegetable Aglio-olio',
                 category: 'Pasta',
                 section: 'Sundown Healthy',
+                image: VegetableAglioolio,
             },
             {
                 id: generateId('Seafood Spaghetti Marinara'),
                 name: 'Seafood Spaghetti Marinara',
                 category: 'Pasta',
                 section: 'Sundown Healthy',
+                image: SeafoodSpaghettiMarinara,
             },
         ],
     },
@@ -216,30 +367,35 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Berry Bliss',
                 category: 'Detox/Smoothie Options',
                 section: 'Sundown Healthy',
+                image: BerryBliss,
             },
             {
                 id: generateId('Green Boost Smoothie'),
                 name: 'Green Boost Smoothie',
                 category: 'Detox/Smoothie Options',
                 section: 'Sundown Healthy',
+                image: GreenBoostSmoothie,
             },
             {
                 id: generateId('Avocado Green Smoothie'),
                 name: 'Avocado Green Smoothie',
                 category: 'Detox/Smoothie Options',
                 section: 'Sundown Healthy',
+                image: AvocadoGreenSmoothie,
             },
             {
                 id: generateId('Mango-Spinach Smoothie'),
                 name: 'Mango-Spinach Smoothie (Seasoner)',
                 category: 'Detox/Smoothie Options',
                 section: 'Sundown Healthy',
+                image: MangoSpinachSmoothie,
             },
             {
                 id: generateId('Tropical Smoothie'),
                 name: 'Tropical Smoothie',
                 category: 'Detox/Smoothie Options',
                 section: 'Sundown Healthy',
+                image: TropicalSmoothie,
             },
         ],
     },
@@ -251,12 +407,14 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Grilled Chicken Breasts',
                 category: 'Protein',
                 section: 'Sundown Healthy',
+                image: GrilledChickenBreasts,
             },
             {
                 id: generateId('Grilled Fish Tilapia Salmon'),
                 name: 'Grilled Fish (Tilapia/Salmon)',
                 category: 'Protein',
                 section: 'Sundown Healthy',
+                image: GrilledFish,
             },
         ],
     },
@@ -269,6 +427,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Carrot, apple, pineapple, turmeric',
                 category: 'Raw Juices & Shots',
                 section: 'Sundown Healthy',
+                // image: Helper,
             },
             {
                 id: generateId('Floo Juice'),
@@ -276,6 +435,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Orange, carrot, lemon, ginger, cayenne',
                 category: 'Raw Juices & Shots',
                 section: 'Sundown Healthy',
+                image: FlooJuice,
             },
             {
                 id: generateId('Spiced Root Tonic'),
@@ -283,6 +443,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Pineapple, apple, ginger, red pepper, turmeric, black pepper',
                 category: 'Raw Juices & Shots',
                 section: 'Sundown Healthy',
+                image: SpicedRootTonic,
             },
             {
                 id: generateId('Lemon Cucumber Cooler'),
@@ -290,6 +451,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Cucumber, lemon, pineapple, celery, apple, mint',
                 category: 'Raw Juices & Shots',
                 section: 'Sundown Healthy',
+                image: LemonCucumberCooler,
             },
             {
                 id: generateId('Daily Greens'),
@@ -297,12 +459,14 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Apple, spinach, cucumber, celery, chia seeds',
                 category: 'Raw Juices & Shots',
                 section: 'Sundown Healthy',
+                image: DailyGreens,
             },
             {
                 id: generateId('Ginger Shot'),
                 name: 'Ginger Shot',
                 category: 'Raw Juices & Shots',
                 section: 'Sundown Healthy',
+                image: GingerShot,
             },
             {
                 id: generateId('Floo Shot'),
@@ -310,6 +474,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Ginger, honey, lemon, cayenne',
                 category: 'Raw Juices & Shots',
                 section: 'Sundown Healthy',
+                image: FlooShot,
             },
         ],
     },
@@ -322,6 +487,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Mint tea, lemon juice, ginger, honey, cayenne pepper',
                 category: 'Tea',
                 section: 'Sundown Healthy',
+                image: FlooFighter,
             },
             {
                 id: generateId('Turmeric Tango'),
@@ -329,18 +495,21 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Turmeric, ginger and lemon',
                 category: 'Tea',
                 section: 'Sundown Healthy',
+                image: TurmericTango,
             },
             {
                 id: generateId('Lemon Ginger Zinger'),
                 name: 'Lemon Ginger Zinger',
                 category: 'Tea',
                 section: 'Sundown Healthy',
+                image: LemonGingerZinger,
             },
             {
                 id: generateId('Chai Latte'),
                 name: 'Chai Latte',
                 category: 'Tea',
                 section: 'Sundown Healthy',
+                image: ChaiLatte,
             },
         ],
     },
@@ -353,6 +522,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Strawberries, banana, frozen yoghurt, pressed apple juice',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                image: StrawberryStinger,
             },
             {
                 id: generateId('C-Breeze'),
@@ -360,6 +530,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Mango, strawberries, pineapple, pressed apple juice, dates',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                image: CBreeze,
             },
             {
                 id: generateId('Peanut Butter Berry'),
@@ -367,6 +538,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Peanut butter, blueberries, banana, dates, almond milk, water',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                image: PeanutButterBerry,
             },
             {
                 id: generateId('Berry Dairy'),
@@ -374,6 +546,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Blueberries, strawberries, banana, frozen yoghurt, honey, milk',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                image: BerryDairy,
             },
             {
                 id: generateId('Peanut Butter Bliss'),
@@ -381,6 +554,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Peanut butter, banana, cacao, frozen yoghurt, milk',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                image: PeanutButterBliss,
             },
             {
                 id: generateId('Gem'),
@@ -388,6 +562,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Banana, almonds, frozen yoghurt, milk, honey',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                image: Gem,
             },
             {
                 id: generateId('All the Greens'),
@@ -395,6 +570,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Mango, cucumber, pineapple, celery, spinach, pressed apple juice',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                image: AllTheGreens,
             },
             {
                 id: generateId('Vitamin See'),
@@ -402,6 +578,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Mango, pineapple, carrot, orange juice',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                image: VitaminSee,
             },
             {
                 id: generateId('Citrus Glo'),
@@ -409,6 +586,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Orange juice, mango, frozen yoghurt, chia seeds, citrus-spiced honey',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                image: CitrusGlo,
             },
             {
                 id: generateId('Brain Boost'),
@@ -416,6 +594,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Blueberries, banana, yoghurt, granola, cacao, almond milk',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                image: BrainBoost,
             },
         ],
     },
@@ -431,36 +610,42 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'English Breakfast',
                 category: 'Breakfast',
                 section: 'Crazy Corner',
+                image: EnglishBreakfast,
             },
             {
                 id: generateId('Classic American Breakfast'),
                 name: 'Classic American Breakfast',
                 category: 'Breakfast',
                 section: 'Crazy Corner',
+                image: ClassicAmericanBreakfast,
             },
             {
                 id: generateId('Morning Mash-up'),
                 name: 'Morning Mash-up',
                 category: 'Breakfast',
                 section: 'Crazy Corner',
+                image: MorningMashup,
             },
             {
                 id: generateId('Hearty Oatmeal Porridge'),
                 name: 'Hearty Oatmeal Porridge',
                 category: 'Breakfast',
                 section: 'Crazy Corner',
+                image: HeartyOatmealPorridge,
             },
             {
                 id: generateId('Classic French Toast'),
                 name: 'Classic French Toast',
                 category: 'Breakfast',
                 section: 'Crazy Corner',
+                image: ClassicFrenchToast,
             },
             {
                 id: generateId('Sardine French Toast'),
                 name: 'Sardine French Toast',
                 category: 'Breakfast',
                 section: 'Crazy Corner',
+                image: SardineFrenchToast,
             },
         ],
     },
@@ -472,42 +657,49 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Chicken BBQ Wings',
                 category: 'Light Bites',
                 section: 'Crazy Corner',
+                image: ChickenBBQWings,
             },
             {
                 id: generateId('Asun Tostadas'),
                 name: 'Asun Tostadas',
                 category: 'Light Bites',
                 section: 'Crazy Corner',
+                image: AsunTostadas,
             },
             {
                 id: generateId('Calamari Rings'),
                 name: 'Calamari Rings',
                 category: 'Light Bites',
                 section: 'Crazy Corner',
+                image: CalamariRings,
             },
             {
                 id: generateId('Buffalo Chicken Bites'),
                 name: 'Buffalo Chicken Bites',
                 category: 'Light Bites',
                 section: 'Crazy Corner',
+                image: BuffaloChickenBites,
             },
             {
                 id: generateId('Gizdodo'),
                 name: 'Gizdodo',
                 category: 'Light Bites',
                 section: 'Crazy Corner',
+                image: Gizdodo,
             },
             {
                 id: generateId('Samosa'),
                 name: 'Samosa',
                 category: 'Light Bites',
                 section: 'Crazy Corner',
+                image: Samosa,
             },
             {
                 id: generateId('Spring Roll'),
                 name: 'Spring Roll',
                 category: 'Light Bites',
                 section: 'Crazy Corner',
+                image: SpringRoll,
             },
         ],
     },
@@ -519,30 +711,35 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Chinese Fried Rice',
                 category: 'Rice Dishes',
                 section: 'Crazy Corner',
+                image: ChineseFriedRice,
             },
             {
                 id: generateId('Jambalaya Fried Rice'),
                 name: 'Jambalaya Fried Rice',
                 category: 'Rice Dishes',
                 section: 'Crazy Corner',
+                image: JambalayaFriedRice,
             },
             {
                 id: generateId('Coconut Rice Special'),
                 name: 'Coconut Rice Special',
                 category: 'Rice Dishes',
                 section: 'Crazy Corner',
+                image: CoconutRiceSpecial,
             },
             {
                 id: generateId('Dirty Rice Bowl'),
                 name: 'Dirty Rice Bowl',
                 category: 'Rice Dishes',
                 section: 'Crazy Corner',
+                image: DirtyRiceBowl,
             },
             {
                 id: generateId('Spicy Asun Rice'),
                 name: 'Spicy Asun Rice',
                 category: 'Rice Dishes',
                 section: 'Crazy Corner',
+                image: SpicyAsunRice,
             },
         ],
     },
@@ -554,42 +751,49 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Asun Fiery Pasta',
                 category: 'Pasta',
                 section: 'Crazy Corner',
+                image: AsunFieryPasta,
             },
             {
                 id: generateId('Pasta Bolognese'),
                 name: 'Pasta Bolognese',
                 category: 'Pasta',
                 section: 'Crazy Corner',
+                image: PastaBolognese,
             },
             {
                 id: generateId('Seafood Pasta'),
                 name: 'Seafood Pasta',
                 category: 'Pasta',
                 section: 'Crazy Corner',
+                image: SeafoodPasta,
             },
             {
                 id: generateId('Linguine Carbonara'),
                 name: 'Linguine Carbonara',
                 category: 'Pasta',
                 section: 'Crazy Corner',
+                image: LinguineCarbonara,
             },
             {
                 id: generateId('Creamy Fettuccine Alfredo'),
                 name: 'Creamy Fettuccine Alfredo',
                 category: 'Pasta',
                 section: 'Crazy Corner',
+                image: CreamyFettuccineAlfredo,
             },
             {
                 id: generateId('Pasta Alla Vodka'),
                 name: 'Pasta Alla Vodka',
                 category: 'Pasta',
                 section: 'Crazy Corner',
+                image: PastaAllaVodka,
             },
             {
                 id: generateId('Marry Me Pasta'),
                 name: 'Marry Me Pasta',
                 category: 'Pasta',
                 section: 'Crazy Corner',
+                image: MarryMePasta,
             },
         ],
     },
@@ -601,24 +805,28 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Steak and Mashed Potatoes',
                 category: 'Menu Classics',
                 section: 'Crazy Corner',
+                image: SteakandMashedPotatoes,
             },
             {
                 id: generateId('Prawn Provencal'),
                 name: 'Prawn Provencal',
                 category: 'Menu Classics',
                 section: 'Crazy Corner',
+                image: PrawnProvencal,
             },
             {
                 id: generateId('Sushi'),
                 name: 'Sushi',
                 category: 'Menu Classics',
                 section: 'Crazy Corner',
+                image: Sushi,
             },
             {
                 id: generateId('Seafood Boil'),
                 name: 'Seafood Boil',
                 category: 'Menu Classics',
                 section: 'Crazy Corner',
+                image: SeafoodBoil,
             },
         ],
     },
@@ -630,54 +838,63 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Peppered Chicken',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                image: ChickenPepperedChicken,
             },
             {
                 id: generateId('Peppered Snail'),
                 name: 'Peppered Snail',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                image: PepperedSnail,
             },
             {
                 id: generateId('Chicken Kebab'),
                 name: 'Chicken Kebab',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                image: ChickenKebab,
             },
             {
                 id: generateId('Beef Kebab'),
                 name: 'Beef Kebab',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                image: BeefKebab,
             },
             {
                 id: generateId('Braised Lamb Chops'),
                 name: 'Braised Lamb Chops',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                image: BraisedLambChops,
             },
             {
                 id: generateId('Butterfly Prawns'),
                 name: 'Butterfly Prawns',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                image: ButterflyPrawns,
             },
             {
                 id: generateId('Grilled Steak'),
                 name: 'Grilled Steak',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                image: GrilledSteak,
             },
             {
                 id: generateId('Lemon Butter Salmon'),
                 name: 'Lemon Butter Salmon',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                image: LemonButterSalmon,
             },
             {
                 id: generateId('Turkey'),
                 name: 'Turkey',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                image: Turkey,
             },
         ],
     },
@@ -689,6 +906,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Singapore Noodles',
                 category: 'Noodles Delight',
                 section: 'Crazy Corner',
+                image: SingaporeNoodles,
             },
             {
                 id: generateId('Pepper Soup Noodles'),
@@ -696,12 +914,14 @@ const crazyCornerCategories: MenuCategory[] = [
                 description: 'Noodles with a twist',
                 category: 'Noodles Delight',
                 section: 'Crazy Corner',
+                image: PepperSoupNoodles,
             },
             {
                 id: generateId('Fried Noodles'),
                 name: 'Fried Noodles',
                 category: 'Noodles Delight',
                 section: 'Crazy Corner',
+                image: FriedNoodles,
             },
         ],
     },
@@ -713,36 +933,42 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Yogurt Parfait',
                 category: 'Desserts',
                 section: 'Crazy Corner',
+                image: YogurtParfait,
             },
             {
                 id: generateId('Ice-cream Sundae'),
                 name: 'Ice-cream Sundae',
                 category: 'Desserts',
                 section: 'Crazy Corner',
+                image: IceCreamSundae,
             },
             {
                 id: generateId('Waffles & Ice-cream'),
                 name: 'Waffles & Ice-cream',
                 category: 'Desserts',
                 section: 'Crazy Corner',
+                image: WafflesAndIceCream,
             },
             {
                 id: generateId('Fruit Bowls'),
                 name: 'Fruit Bowls',
                 category: 'Desserts',
                 section: 'Crazy Corner',
+                image: FruitBowls,
             },
             {
                 id: generateId('Red Velvet Cake'),
                 name: 'Red Velvet Cake',
                 category: 'Desserts',
                 section: 'Crazy Corner',
+                image: RedVelvetCake,
             },
             {
                 id: generateId('Brownies'),
                 name: 'Brownies',
                 category: 'Desserts',
                 section: 'Crazy Corner',
+                image: Brownies,
             },
         ],
     },
@@ -754,36 +980,42 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Shredded Beef Sauce',
                 category: 'Sauces',
                 section: 'Crazy Corner',
+                image: ShreddedBeefSauce,
             },
             {
                 id: generateId('Chicken Curry Sauce'),
                 name: 'Chicken Curry Sauce',
                 category: 'Sauces',
                 section: 'Crazy Corner',
+                image: ChickenCurrySauce,
             },
             {
                 id: generateId('Sweet Sour Chicken'),
                 name: 'Sweet Sour Chicken',
                 category: 'Sauces',
                 section: 'Crazy Corner',
+                image: SweetSourChicken,
             },
             {
                 id: generateId('Butter Chicken & Garlic Naan Bread'),
                 name: 'Butter Chicken & Garlic Naan Bread',
                 category: 'Sauces',
                 section: 'Crazy Corner',
+                image: ButterChickenAndGarlicNaanBread,
             },
             {
                 id: generateId('Prawn Sauce'),
                 name: 'Prawn Sauce',
                 category: 'Sauces',
                 section: 'Crazy Corner',
+                image: PrawnSauce,
             },
             {
                 id: generateId('Jamaica Goat Sauce'),
                 name: 'Jamaica Goat Sauce',
                 category: 'Sauces',
                 section: 'Crazy Corner',
+                image: JamaicaGoatSauce,
             },
         ],
     },
@@ -795,30 +1027,35 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Pepper Sauce',
                 category: 'Dips & Cream',
                 section: 'Crazy Corner',
+                image: PepperSauce,
             },
             {
                 id: generateId('Salsa'),
                 name: 'Salsa',
                 category: 'Dips & Cream',
                 section: 'Crazy Corner',
+                image: Salsa,
             },
             {
                 id: generateId('Guacamole'),
                 name: 'Guacamole',
                 category: 'Dips & Cream',
                 section: 'Crazy Corner',
+                image: Guacamole,
             },
             {
                 id: generateId('Aioli Sauce'),
                 name: 'Aioli Sauce',
                 category: 'Dips & Cream',
                 section: 'Crazy Corner',
+                image: AioliSauce,
             },
             {
                 id: generateId('Buffalo Sauce'),
                 name: 'Buffalo Sauce',
                 category: 'Dips & Cream',
                 section: 'Crazy Corner',
+                image: BuffaloSauce,
             },
         ],
     },
@@ -830,12 +1067,14 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'French Fries',
                 category: 'Sides',
                 section: 'Crazy Corner',
+                image: FrenchFries,
             },
             {
                 id: generateId('Fried Plantains'),
                 name: 'Fried Plantains',
                 category: 'Sides',
                 section: 'Crazy Corner',
+                image: FriedPlantains,
             },
         ],
     },
@@ -847,36 +1086,42 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Chocolate Berry Smoothie',
                 category: 'Smoothies',
                 section: 'Crazy Corner',
+                image: ChocolateBerrySmoothie,
             },
             {
                 id: generateId('Peanut Butter Banana Smoothie'),
                 name: 'Peanut Butter Banana Smoothie',
                 category: 'Smoothies',
                 section: 'Crazy Corner',
+                image: PeanutButterBananaSmoothie,
             },
             {
                 id: generateId('Double Berry Blast'),
                 name: 'Double Berry Blast',
                 category: 'Smoothies',
                 section: 'Crazy Corner',
+                image: DoubleBerryBlast,
             },
             {
                 id: generateId('Banana Almond Cado'),
                 name: 'Banana Almond Cado',
                 category: 'Smoothies',
                 section: 'Crazy Corner',
+                image: BananaAlmondCado,
             },
             {
                 id: generateId('Tropical Fruit Smoothie'),
                 name: 'Tropical Fruit Smoothie',
                 category: 'Smoothies',
                 section: 'Crazy Corner',
+                image: TropicalFruitSmoothie,
             },
             {
                 id: generateId('PB Berry Smoothie'),
-                name: 'PB Berry Smoothie',
+                name: 'Peanut Butter Berry Smoothie',
                 category: 'Smoothies',
                 section: 'Crazy Corner',
+                image: PeanutButterBerrySmoothie,
             },
         ],
     },
@@ -889,6 +1134,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 description: 'Smooth vanilla, caramel drizzle',
                 category: 'Milkshakes',
                 section: 'Crazy Corner',
+                image: SmoothVanillaCaramelDrizzle,
             },
             {
                 id: generateId('Strawberry Bliss Shake'),
@@ -896,6 +1142,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 description: 'Fresh strawberries, vanilla ice cream',
                 category: 'Milkshakes',
                 section: 'Crazy Corner',
+                image: StrawberryBlissFreshStrawberriesVanillaIceCream,
             },
             {
                 id: generateId('Oreo Crush'),
@@ -903,6 +1150,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 description: 'Cookies-and-cream ice cream, crushed oreo, chocolate sauce',
                 category: 'Milkshakes',
                 section: 'Crazy Corner',
+                image: CookiesAndCreamIceCreamCrushedOreoChocolateSauce
             },
             {
                 id: generateId('Chocolate Dream'),
@@ -910,6 +1158,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 description: 'Rich chocolate, whipped cream, chocolate chips',
                 category: 'Milkshakes',
                 section: 'Crazy Corner',
+                image: ChocolateDreamRichChocolateWhippedCreamChocolateChips,
             },
         ],
     },
@@ -921,36 +1170,42 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Hot Chocolate',
                 category: 'Tea',
                 section: 'Crazy Corner',
+                image: HotChocolate,
             },
             {
                 id: generateId('Iced Cappuccino'),
                 name: 'Iced Cappuccino',
                 category: 'Tea',
                 section: 'Crazy Corner',
+                image: IcedCappuccino,
             },
             {
                 id: generateId('Americano'),
                 name: 'Americano',
                 category: 'Tea',
                 section: 'Crazy Corner',
+                image: Americano,
             },
             {
                 id: generateId('Espresso'),
                 name: 'Espresso',
                 category: 'Tea',
                 section: 'Crazy Corner',
+                image: Espresso,
             },
             {
                 id: generateId('Iced Americano'),
                 name: 'Iced Americano',
                 category: 'Tea',
                 section: 'Crazy Corner',
+                image: IcedAmericano,
             },
             {
                 id: generateId('Caffe Latte'),
                 name: 'Caffé Latte',
                 category: 'Tea',
                 section: 'Crazy Corner',
+                image: CafféLatte,
             },
         ],
     },
@@ -962,36 +1217,42 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Cheesy Beef Burrito',
                 category: 'Wraps & Sandwiches',
                 section: 'Crazy Corner',
+                image: ChessyBeefBurrito,
             },
             {
                 id: generateId('Croissant Chicken Sandwich'),
                 name: 'Croissant Chicken Sandwich',
                 category: 'Wraps & Sandwiches',
                 section: 'Crazy Corner',
+                image: CroissantChickenSandwich,
             },
             {
                 id: generateId('Special Taco Beeffold'),
                 name: 'Special Taco Beeffold',
                 category: 'Wraps & Sandwiches',
                 section: 'Crazy Corner',
+                image: SpecialTacoBeeffold,
             },
             {
                 id: generateId('Bagel Delight'),
                 name: 'Bagel Delight',
                 category: 'Wraps & Sandwiches',
                 section: 'Crazy Corner',
+                image: BagelDelight,
             },
             {
                 id: generateId('Grilled Chicken Club Sandwich CC'),
                 name: 'Grilled Chicken Club Sandwich',
                 category: 'Wraps & Sandwiches',
                 section: 'Crazy Corner',
+                image: GrilledChickenClubSandwich,
             },
             {
                 id: generateId('Cheeseburger'),
                 name: 'Cheeseburger',
                 category: 'Wraps & Sandwiches',
                 section: 'Crazy Corner',
+                image: Cheeseburger,
             },
         ],
     },
