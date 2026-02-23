@@ -1,4 +1,4 @@
-import { useSearchParams, Link } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 import { useState, useMemo } from 'react'
 import { menuData } from '../data/menu'
 import type { MenuSection as MenuSectionType, MenuItem } from '../data/menu'
@@ -122,7 +122,7 @@ export default function MenuPage() {
 
 
             {/* Main Card Container */}
-            <div className="max-w-2xl w-full mx-auto relative z-10 h-[92vh] md:h-[96vh] flex flex-col my-4">
+            <div className="max-w-2xl w-full mx-auto relative z-10 h-[96vh] md:h-[96vh] flex flex-col my-2 md:my-4">
 
                 {/* SVG Border Frame - Absolute Positioned */}
                 <img
@@ -138,9 +138,6 @@ export default function MenuPage() {
                     {/* Header Section */}
                     <div className="p-6 md:p-8 space-y-6 flex-none bg-transparent relative z-20">
                         <div className="text-center space-y-2">
-                            <Link to="/" className="inline-block text-xs font-bold tracking-widest uppercase text-stone-500 hover:text-brand-orange transition-colors mb-1">
-                                ← Back to Home
-                            </Link>
                             <h1 className="text-4xl font-display font-bold text-stone-900 tracking-wider">
                                 <span className='text-african-yellow'>SUNDOWN</span> MENU
                             </h1>
