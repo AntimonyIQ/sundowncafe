@@ -76,7 +76,7 @@ export default function HomePage() {
                     transition={{ duration: 1, delay: 0.5 }}
                     className="absolute top-6 right-6 md:top-10 md:right-10 flex gap-6"
                 >
-                    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-brand-orange transition-all hover:scale-110 opacity-80 hover:opacity-100">
+                    <a href="https://www.instagram.com/sundownbysky?" target="_blank" rel="noreferrer" className="hover:text-brand-orange transition-all hover:scale-110 opacity-80 hover:opacity-100">
                         <InstagramIcon />
                     </a>
                 </motion.div>
