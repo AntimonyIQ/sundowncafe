@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Laravel application dependencies (run composer install inside /sundown)
+sundown/vendor/
+sundown/node_modules/
+sundown/.env
+sundown/storage/pail/
+sundown/storage/*.key
+sundown/public/hot
+sundown/public/storage
