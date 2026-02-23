@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import type { MenuItem } from '../data/menu'
 import defaultFoodImage from '../assets/images/rice-bowl.png'
@@ -17,6 +18,36 @@ export default function ImagePreviewModal({
     onToggleSelection,
     isSelected
 }: ImagePreviewModalProps) {
+    // Push a dummy history entry when the preview opens so that browser
+    // back gestures (iOS swipe-back, Android back button) close the preview
+    // instead of navigating away to a previous page.
+    const didPushHistoryRef = useRef(false)
+
+    useEffect(() => {
+        if (!isOpen) return
+
+        history.pushState({ imagePreviewOverlay: true }, '', window.location.href)
+        didPushHistoryRef.current = true
+
+        const handlePopState = () => {
+            if (!didPushHistoryRef.current) return
+            didPushHistoryRef.current = false
+            onClose()
+        }
+
+        window.addEventListener('popstate', handlePopState)
+
+        return () => {
+            window.removeEventListener('popstate', handlePopState)
+            // Overlay was closed via the X button (not via browser back).
+            // Pop the dummy history entry we pushed so the history stack stays clean.
+            if (didPushHistoryRef.current) {
+                didPushHistoryRef.current = false
+                history.back()
+            }
+        }
+    }, [isOpen, onClose])
+
     // Return early if no item is selected for preview
     if (!item) return null
 
