@@ -83,11 +83,6 @@ export default function MenuPage() {
             {/* Dimming overlay if needed for readability */}
             <div className="absolute inset-0 bg-black/50 z-0" />
 
-            {/* Old African Frame - Removed as requested */}
-            {/* <div className="fixed inset-0 pointer-events-none z-0 opacity-10">
-                <AfricanFrame />
-            </div> */}
-
             <SelectionPreviewModal 
                 isOpen={isSelectionModalOpen}
                 onClose={() => setIsSelectionModalOpen(false)}
