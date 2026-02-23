@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useSEO } from '../hooks/useSEO';
 // Icons will be imported here (assuming you have access to a library or use SVGs, 
 // using simple text/svg placeholders for now if no library is ready, or lucid-react)
 // I will use simple SVG icons for this implementation to keep dependencies low.
@@ -33,6 +34,11 @@ const PhoneIcon = () => (
 
 
 export default function HomePage() {
+    useSEO({
+        title: 'Sundown Cafe — Refined Dining & Artisanal Moments | Port Harcourt',
+        description: 'Visit Sundown Cafe at 149 Woji Road, GRA, Port Harcourt. Enjoy gourmet dishes, artisanal coffee, and an elegant atmosphere. Call +234 812 345 6789 to book a table.',
+        canonical: 'https://sundown.cafe/',
+    });
     return (
         <div className="relative w-full h-dvh overflow-hidden font-sans text-white">
 
@@ -86,9 +92,9 @@ export default function HomePage() {
                         <p className="text-brand-orange font-luxury text-sm md:text-base tracking-[0.4em] mb-6 uppercase">
                             Est. 2024
                         </p>
-                        <h2 className="text-5xl md:text-7xl lg:text-9xl font-luxury font-medium leading-none tracking-widest text-white drop-shadow-2xl mb-8">
+                        <h1 className="text-5xl md:text-7xl lg:text-9xl font-luxury font-medium leading-none tracking-widest text-white drop-shadow-2xl mb-8">
                             ARTISAN<br />FLAVORS
-                        </h2>
+                        </h1>
 
                         <p className="text-sm md:text-lg text-gray-200 font-light tracking-[0.2em] max-w-lg mx-auto uppercase leading-relaxed hidden md:block drop-shadow-md">
                             Coffee • Cuisine • Atmosphere

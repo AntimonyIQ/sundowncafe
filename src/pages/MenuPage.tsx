@@ -1,8 +1,9 @@
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams, Link } from 'react-router-dom'
 import { useState, useMemo } from 'react'
 import { menuData } from '../data/menu'
 import type { MenuSection as MenuSectionType, MenuItem } from '../data/menu'
 import { useMenuSelection } from '../hooks/useMenuSelection'
+import { useSEO } from '../hooks/useSEO'
 import MenuCategory from '../components/MenuCategory'
 import { motion, AnimatePresence } from 'framer-motion'
 // import AfricanFrame from '../components/AfricanFrame'
@@ -30,6 +31,11 @@ const filterMenu = (data: MenuSectionType[], query: string) => {
 }
 
 export default function MenuPage() {
+    useSEO({
+        title: 'Menu — Sundown Cafe | Gourmet Food & Artisanal Coffee in Port Harcourt',
+        description: 'Explore the Sundown Cafe menu featuring gourmet burgers, grilled proteins, smoothies, artisanal coffee, and decadent desserts. Best café menu in Port Harcourt, GRA.',
+        canonical: 'https://sundown.cafe/menu',
+    });
     const [searchParams] = useSearchParams()
     const seatParam = searchParams.get('seat')
     const { isSelected, toggleItem, clearAll, selectedCount, selectedIds } = useMenuSelection()
@@ -81,7 +87,7 @@ export default function MenuPage() {
             {/* Page Background Image */}
             <img
                 src="/cardbg.png"
-                alt="Background"
+                alt="Sundown Cafe interior ambiance"
                 className="absolute inset-0 w-full h-full object-cover z-0"
             />
 
@@ -132,6 +138,9 @@ export default function MenuPage() {
                     {/* Header Section */}
                     <div className="p-6 md:p-8 space-y-6 flex-none bg-transparent relative z-20">
                         <div className="text-center space-y-2">
+                            <Link to="/" className="inline-block text-xs font-bold tracking-widest uppercase text-stone-500 hover:text-brand-orange transition-colors mb-1">
+                                ← Back to Home
+                            </Link>
                             <h1 className="text-4xl font-display font-bold text-stone-900 tracking-wider">
                                 <span className='text-african-yellow'>SUNDOWN</span> MENU
                             </h1>
