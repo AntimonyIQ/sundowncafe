@@ -23,6 +23,14 @@ export default function ImagePreviewModal({
     // instead of navigating away to a previous page.
     const didPushHistoryRef = useRef(false)
 
+    // Keep a stable ref to onClose so the useEffect doesn't re-run (and
+    // trigger history.back()) just because the parent passed a new inline
+    // arrow function on each render.
+    const onCloseRef = useRef(onClose)
+    useEffect(() => {
+        onCloseRef.current = onClose
+    })
+
     useEffect(() => {
         if (!isOpen) return
 
@@ -32,21 +40,21 @@ export default function ImagePreviewModal({
         const handlePopState = () => {
             if (!didPushHistoryRef.current) return
             didPushHistoryRef.current = false
-            onClose()
+            onCloseRef.current()
         }
 
         window.addEventListener('popstate', handlePopState)
 
         return () => {
             window.removeEventListener('popstate', handlePopState)
-            // Overlay was closed via the X button (not via browser back).
+            // Overlay was closed via a button (not via browser back).
             // Pop the dummy history entry we pushed so the history stack stays clean.
             if (didPushHistoryRef.current) {
                 didPushHistoryRef.current = false
                 history.back()
             }
         }
-    }, [isOpen, onClose])
+    }, [isOpen])
 
     // Return early if no item is selected for preview
     if (!item) return null
@@ -121,7 +129,7 @@ export default function ImagePreviewModal({
 
                                     {/* Action Button */}
                                     <button
-                                        onClick={() => onToggleSelection(item.id)}
+                                        onClick={() => { onToggleSelection(item.id); onClose(); }}
                                         className={`mt-4 w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95 ${isItemSelected
                                                 ? 'bg-emerald-500 text-white shadow-emerald-500/30'
                                                 : 'bg-white text-brand-orange hover:bg-brand-orange hover:text-white'
