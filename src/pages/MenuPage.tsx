@@ -37,8 +37,13 @@ export default function MenuPage() {
     const [isSelectionModalOpen, setIsSelectionModalOpen] = useState(false)
     const [previewItem, setPreviewItem] = useState<MenuItem | null>(null)
     const [searchQuery, setSearchQuery] = useState('')
+    const [activeTab, setActiveTab] = useState(menuData[0].name)
 
     const filteredMenu = useMemo(() => filterMenu(menuData, searchQuery), [searchQuery])
+
+    const activeSection = useMemo(() => {
+        return filteredMenu.find(section => section.name === activeTab)
+    }, [filteredMenu, activeTab])
 
     const selectedItems = useMemo(() => {
         const items: MenuItem[] = []
@@ -138,22 +143,46 @@ export default function MenuPage() {
                         </div>
 
                         {/* Search Bar */}
-                    <div className="relative group">
-                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <div className="relative group">
+                            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                 <svg className="h-5 w-5 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
-                        </div>
-                        <input
-                            type="text"
+                            </div>
+                            <input
+                                type="text"
                                 placeholder="SEARCH FLAVORS..."
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
                                 className="block w-full pl-12 pr-4 py-4 bg-white border border-stone-300 focus:border-brand-orange
-                                       rounded-none text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-0
-                                       font-sans text-sm tracking-wide uppercase transition-colors"
-                        />
-                    </div>
+                                           rounded-none text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-0
+                                           font-sans text-sm tracking-wide uppercase transition-colors"
+                            />
+                        </div>
+
+                        {/* Tabs */}
+                        <div className="flex w-full space-x-4 border-b border-stone-200">
+                            {menuData.map((section) => (
+                                <button
+                                    key={section.name}
+                                    onClick={() => setActiveTab(section.name)}
+                                    className={`
+                                        flex-1 pb-3 text-xs md:text-sm font-bold tracking-widest uppercase transition-colors relative
+                                        ${activeTab === section.name
+                                            ? 'text-brand-orange'
+                                            : 'text-stone-400 hover:text-stone-600'}
+                                    `}
+                                >
+                                    {section.name}
+                                    {activeTab === section.name && (
+                                        <motion.div
+                                            layoutId="activeTab"
+                                            className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-orange"
+                                        />
+                                    )}
+                                </button>
+                            ))}
+                        </div>
 
                         {/* Reset Button */}
                         {selectedCount > 0 && (
@@ -177,16 +206,16 @@ export default function MenuPage() {
 
                         {/* Scrollable List */}
                         <div className="flex-1 overflow-y-auto pb-32 pt-4 scrollbar-hide">
-                        <AnimatePresence mode="wait">
-                            {filteredMenu.length > 0 ? (
-                                filteredMenu.map((section) => (
+                            <AnimatePresence mode="wait">
+                                {activeSection && activeSection.categories.length > 0 ? (
                                     <motion.div 
-                                        key={section.name}
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
+                                        key={activeSection.name}
+                                        initial={{ opacity: 0, x: 20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        exit={{ opacity: 0, x: -20 }}
+                                        transition={{ duration: 0.2 }}
                                     >
-                                        {section.categories.map(category => (
+                                        {activeSection.categories.map(category => (
                                             <MenuCategory
                                                 key={category.name}
                                                 category={category}
@@ -196,8 +225,7 @@ export default function MenuPage() {
                                             />
                                         ))}
                                     </motion.div>
-                                ))
-                            ) : (
+                                ) : (
                                         <motion.div
                                             initial={{ opacity: 0 }} 
                                     animate={{ opacity: 1 }}
