@@ -1,7 +1,8 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import type { MenuItem } from '../data/menu'
 import defaultFoodImage from '../assets/images/rice-bowl.png'
+import { generateShareUrl } from '../utils/shareSelection'
 
 interface SelectionPreviewModalProps {
     isOpen: boolean
@@ -17,6 +18,51 @@ export default function SelectionPreviewModal({
     onRemoveItem
 }: SelectionPreviewModalProps) {
     // const total = selectedItems.reduce((sum, item) => sum + (item.price || 0), 0)
+    const [shareToast, setShareToast] = useState<'copied' | 'shared' | null>(null)
+
+    const handleShare = async () => {
+        const ids = selectedItems.map(item => item.id)
+        const url = generateShareUrl(ids)
+
+        if (navigator.share) {
+            try {
+                await navigator.share({ title: 'Sundown Cafe Selection', url })
+                setShareToast('shared')
+            } catch {
+                // User cancelled or API failed — fall through to clipboard
+                await copyToClipboard(url)
+            }
+        } else {
+            await copyToClipboard(url)
+        }
+    }
+
+    const copyToClipboard = async (url: string) => {
+        try {
+            await navigator.clipboard.writeText(url)
+            setShareToast('copied')
+        } catch {
+            // Fallback for environments without Clipboard API
+            try {
+                const input = document.createElement('input')
+                input.value = url
+                document.body.appendChild(input)
+                input.select()
+                document.execCommand('copy')
+                document.body.removeChild(input)
+                setShareToast('copied')
+            } catch {
+                // If all copy methods fail, open the URL in a prompt so the user can copy manually
+                window.prompt('Copy this link to share your selection:', url)
+            }
+        }
+    }
+
+    useEffect(() => {
+        if (!shareToast) return
+        const timer = setTimeout(() => setShareToast(null), 2500)
+        return () => clearTimeout(timer)
+    }, [shareToast])
 
     // Push a dummy history entry when the overlay opens so that browser
     // back gestures (iOS swipe-back, Android back button) close the overlay
@@ -169,6 +215,28 @@ export default function SelectionPreviewModal({
                                     </span>
                                     */}
                                 </div>
+                                <button
+                                    onClick={handleShare}
+                                    className="w-full py-3 mb-2 bg-stone-100 text-stone-700 rounded-xl font-bold text-sm
+                                               hover:bg-stone-200 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                                >
+                                    {shareToast ? (
+                                        <>
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                                <polyline points="20 6 9 17 4 12" />
+                                            </svg>
+                                            {shareToast === 'shared' ? 'Shared!' : 'Link Copied!'}
+                                        </>
+                                    ) : (
+                                        <>
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" />
+                                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                                            </svg>
+                                            Share Selection
+                                        </>
+                                    )}
+                                </button>
                                 <button
                                     onClick={onClose}
                                     className="w-full py-3.5 bg-brand-orange text-white rounded-xl font-bold text-sm
