@@ -1207,6 +1207,20 @@ const crazyCornerCategories: MenuCategory[] = [
                 section: 'Crazy Corner',
                 image: CafféLatte,
             },
+            {
+                id: generateId('Boba Tea'),
+                name: 'BOBA TEA',
+                category: 'Tea',
+                section: 'Crazy Corner',
+                image: 'https://worldlytreat.com/wp-content/uploads/2024/04/Tiger-milk-tea-1152x1536.jpg',
+            },
+            {
+                id: generateId('Arabian Tea'),
+                name: 'ARABIAN TEA',
+                category: 'Tea',
+                section: 'Crazy Corner',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Arabic_tea.jpg/1280px-Arabic_tea.jpg',
+            },
         ],
     },
     {
