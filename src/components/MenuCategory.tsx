@@ -1,6 +1,5 @@
 import type { MenuCategory as MenuCategoryType, MenuItem } from '../data/menu'
 import MenuItemCard from './MenuItemCard'
-import StylishDivider from './StylishDivider'
 
 interface MenuCategoryProps {
     category: MenuCategoryType
@@ -16,26 +15,39 @@ export default function MenuCategory({
     onPreview,
 }: MenuCategoryProps) {
     return (
-        <div className="mb-12 last:mb-0 text-center relative">
-            <h3 className="text-2xl font-luxury font-bold text-african-dark-brown mb-8 inline-block px-8 relative">
-                {category.name}
-            </h3>
+        <div className="mb-8 last:mb-0">
+            {/* Section Header */}
+            <div className="flex items-center justify-between px-4 mb-3">
+                <h3 className="text-sm font-bold text-stone-700 uppercase tracking-widest">
+                    {category.name}
+                </h3>
+                <svg
+                    aria-hidden="true"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-stone-300 flex-shrink-0"
+                >
+                    <polyline points="9 18 15 12 9 6" />
+                </svg>
+            </div>
 
-            <div className="grid grid-cols-1 divide-y divide-stone-200">
-                {category.items.map((item, index) => (
+            {/* Horizontal Scroll Row */}
+            <div className="flex gap-3 overflow-x-auto pb-2 px-4 scrollbar-hide">
+                {category.items.map((item) => (
                     <MenuItemCard
                         key={item.id}
                         item={item}
                         isSelected={isSelected(item.id)}
                         onToggle={() => onToggle(item.id)}
                         onPreview={() => onPreview(item)}
-                        isLast={index === category.items.length - 1}
                     />
                 ))}
-            </div>
-
-            <div className="mt-12 px-4">
-                <StylishDivider color="#7F5539" className="w-full h-auto" />
             </div>
         </div>
     )
