@@ -133,11 +133,17 @@ import ChefSalad from "../assets/images/ChefSalad.png";
 import SearedSalmonAndCitrusGreens from "../assets/images/SearedSalmonAndCitrusGreens.png";
 import GrilledChickenTeriyakiBowl from "../assets/images/GrilledChickenTeriyakiBowl.png";
 
+/** When false, prices and totals are hidden from the UI. Selection logic still works. */
+export const SHOW_PRICE = true
+
+/** Placeholder price in Kobo (₦1,000 = 100,000 Kobo) */
+export const DEFAULT_PRICE_KOBO = 100000
+
 export interface MenuItem {
     id: string
     name: string
     description?: string
-    price?: number
+    price: number
     image?: string
     available?: boolean
     category: string
@@ -171,6 +177,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 available: true,
                 category: 'Wholesome Plates',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: GrilledTilapia
             },
             {
@@ -180,6 +187,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 available: true,
                 category: 'Wholesome Plates',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: SteakMashedPotatoes,
             },
             {
@@ -189,6 +197,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 available: true,
                 category: 'Wholesome Plates',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: JellofPowerBowl,
             },
             {
@@ -198,6 +207,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 available: true,
                 category: 'Wholesome Plates',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: GrilledChickenTeriyakiBowl,
             },
             {
@@ -206,6 +216,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 available: true,
                 category: 'Wholesome Plates',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: SearedSalmonAndCitrusGreens,
             },
             {
@@ -214,6 +225,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 available: true,
                 category: 'Wholesome Plates',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: GrilledChickenBBQ
             },
         ],
@@ -226,6 +238,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Classic Caesar Salad',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: ClassicCaesarSalad,
             },
             {
@@ -233,6 +246,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Kale & Quinoa Crunch',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: KaleAndQuinoaCrunch,
             },
             {
@@ -240,6 +254,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Hooked on Greens',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: HookedonGreens,
             },
             {
@@ -247,6 +262,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Mediterranean Salad',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: MediterraneanSalad,
             },
             {
@@ -254,6 +270,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Chicken Vegetable',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: ChickenVegetable,
             },
             {
@@ -261,6 +278,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Coleslaw',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: Coleslaw,
             },
             {
@@ -268,6 +286,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Chef Salad',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: ChefSalad,
             },
             {
@@ -275,6 +294,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Smoked Salmon Salad',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: SmokedSalmonSalad,
             },
             {
@@ -282,6 +302,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Classic Waldorf Salad',
                 category: 'Salad',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: ClassicWaldorfSalad,
             },
         ],
@@ -294,6 +315,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Grilled Fish Tacos',
                 category: 'Wraps & Sandwiches',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: GrilledFishTacos,
             },
             {
@@ -301,6 +323,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Avocado Delight Wrap',
                 category: 'Wraps & Sandwiches',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: AvocadoDelightWrap,
             },
             {
@@ -308,6 +331,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Fresh Salad Wrap',
                 category: 'Wraps & Sandwiches',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: FreshSaladWrap,
             },
             {
@@ -315,6 +339,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Whole Grain Chicken Wrap',
                 category: 'Wraps & Sandwiches',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: WholeGrainChickenWrap,
             },
             {
@@ -322,6 +347,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Whole Grain Bagel Sandwich',
                 category: 'Wraps & Sandwiches',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: WholeGrainBagelSandwich,
             },
             {
@@ -329,6 +355,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Whole Grain Club Sandwich',
                 category: 'Wraps & Sandwiches',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: WholeGrainClubSandwich,
             },
         ],
@@ -341,6 +368,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Pesto Pasta',
                 category: 'Pasta',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: PestoPasta,
             },
             {
@@ -348,6 +376,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Vegetable Aglio-olio',
                 category: 'Pasta',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: VegetableAglioolio,
             },
             {
@@ -355,6 +384,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Seafood Spaghetti Marinara',
                 category: 'Pasta',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: SeafoodSpaghettiMarinara,
             },
         ],
@@ -367,6 +397,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Berry Bliss',
                 category: 'Detox/Smoothie Options',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: BerryBliss,
             },
             {
@@ -374,6 +405,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Green Boost Smoothie',
                 category: 'Detox/Smoothie Options',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: GreenBoostSmoothie,
             },
             {
@@ -381,6 +413,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Avocado Green Smoothie',
                 category: 'Detox/Smoothie Options',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: AvocadoGreenSmoothie,
             },
             {
@@ -388,6 +421,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Mango-Spinach Smoothie (Seasoner)',
                 category: 'Detox/Smoothie Options',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: MangoSpinachSmoothie,
             },
             {
@@ -395,6 +429,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Tropical Smoothie',
                 category: 'Detox/Smoothie Options',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: TropicalSmoothie,
             },
         ],
@@ -407,6 +442,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Grilled Chicken Breasts',
                 category: 'Protein',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: GrilledChickenBreasts,
             },
             {
@@ -414,6 +450,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Grilled Fish (Tilapia/Salmon)',
                 category: 'Protein',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: GrilledFish,
             },
         ],
@@ -427,6 +464,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Carrot, apple, pineapple, turmeric',
                 category: 'Raw Juices & Shots',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 // image: Helper,
             },
             {
@@ -435,6 +473,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Orange, carrot, lemon, ginger, cayenne',
                 category: 'Raw Juices & Shots',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: FlooJuice,
             },
             {
@@ -443,6 +482,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Pineapple, apple, ginger, red pepper, turmeric, black pepper',
                 category: 'Raw Juices & Shots',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: SpicedRootTonic,
             },
             {
@@ -451,6 +491,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Cucumber, lemon, pineapple, celery, apple, mint',
                 category: 'Raw Juices & Shots',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: LemonCucumberCooler,
             },
             {
@@ -459,6 +500,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Apple, spinach, cucumber, celery, chia seeds',
                 category: 'Raw Juices & Shots',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: DailyGreens,
             },
             {
@@ -466,6 +508,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Ginger Shot',
                 category: 'Raw Juices & Shots',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: GingerShot,
             },
             {
@@ -474,6 +517,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Ginger, honey, lemon, cayenne',
                 category: 'Raw Juices & Shots',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: FlooShot,
             },
         ],
@@ -487,6 +531,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Mint tea, lemon juice, ginger, honey, cayenne pepper',
                 category: 'Tea',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: FlooFighter,
             },
             {
@@ -495,6 +540,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Turmeric, ginger and lemon',
                 category: 'Tea',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: TurmericTango,
             },
             {
@@ -502,6 +548,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Lemon Ginger Zinger',
                 category: 'Tea',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: LemonGingerZinger,
             },
             {
@@ -509,6 +556,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 name: 'Chai Latte',
                 category: 'Tea',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: ChaiLatte,
             },
         ],
@@ -522,6 +570,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Strawberries, banana, frozen yoghurt, pressed apple juice',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: StrawberryStinger,
             },
             {
@@ -530,6 +579,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Mango, strawberries, pineapple, pressed apple juice, dates',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: CBreeze,
             },
             {
@@ -538,6 +588,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Peanut butter, blueberries, banana, dates, almond milk, water',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: PeanutButterBerry,
             },
             {
@@ -546,6 +597,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Blueberries, strawberries, banana, frozen yoghurt, honey, milk',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: BerryDairy,
             },
             {
@@ -554,6 +606,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Peanut butter, banana, cacao, frozen yoghurt, milk',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: PeanutButterBliss,
             },
             {
@@ -562,6 +615,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Banana, almonds, frozen yoghurt, milk, honey',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: Gem,
             },
             {
@@ -570,6 +624,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Mango, cucumber, pineapple, celery, spinach, pressed apple juice',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: AllTheGreens,
             },
             {
@@ -578,6 +633,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Mango, pineapple, carrot, orange juice',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: VitaminSee,
             },
             {
@@ -586,6 +642,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Orange juice, mango, frozen yoghurt, chia seeds, citrus-spiced honey',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: CitrusGlo,
             },
             {
@@ -594,6 +651,7 @@ const sundownHealthyCategories: MenuCategory[] = [
                 description: 'Blueberries, banana, yoghurt, granola, cacao, almond milk',
                 category: 'Smoothies',
                 section: 'Sundown Healthy',
+                price: DEFAULT_PRICE_KOBO,
                 image: BrainBoost,
             },
         ],
@@ -610,6 +668,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'English Breakfast',
                 category: 'Breakfast',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: EnglishBreakfast,
             },
             {
@@ -617,6 +676,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Classic American Breakfast',
                 category: 'Breakfast',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: ClassicAmericanBreakfast,
             },
             {
@@ -624,6 +684,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Morning Mash-up',
                 category: 'Breakfast',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: MorningMashup,
             },
             {
@@ -631,6 +692,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Hearty Oatmeal Porridge',
                 category: 'Breakfast',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: HeartyOatmealPorridge,
             },
             {
@@ -638,6 +700,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Classic French Toast',
                 category: 'Breakfast',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: ClassicFrenchToast,
             },
             {
@@ -645,6 +708,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Sardine French Toast',
                 category: 'Breakfast',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: SardineFrenchToast,
             },
         ],
@@ -657,6 +721,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Chicken BBQ Wings',
                 category: 'Light Bites',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: ChickenBBQWings,
             },
             {
@@ -664,6 +729,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Asun Tostadas',
                 category: 'Light Bites',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: AsunTostadas,
             },
             {
@@ -671,6 +737,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Calamari Rings',
                 category: 'Light Bites',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: CalamariRings,
             },
             {
@@ -678,6 +745,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Buffalo Chicken Bites',
                 category: 'Light Bites',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: BuffaloChickenBites,
             },
             {
@@ -685,6 +753,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Gizdodo',
                 category: 'Light Bites',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: Gizdodo,
             },
             {
@@ -692,6 +761,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Samosa',
                 category: 'Light Bites',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: Samosa,
             },
             {
@@ -699,6 +769,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Spring Roll',
                 category: 'Light Bites',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: SpringRoll,
             },
         ],
@@ -711,6 +782,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Chinese Fried Rice',
                 category: 'Rice Dishes',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: ChineseFriedRice,
             },
             {
@@ -718,6 +790,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Jambalaya Fried Rice',
                 category: 'Rice Dishes',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: JambalayaFriedRice,
             },
             {
@@ -725,6 +798,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Coconut Rice Special',
                 category: 'Rice Dishes',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: CoconutRiceSpecial,
             },
             {
@@ -732,6 +806,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Dirty Rice Bowl',
                 category: 'Rice Dishes',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: DirtyRiceBowl,
             },
             {
@@ -739,6 +814,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Spicy Asun Rice',
                 category: 'Rice Dishes',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: SpicyAsunRice,
             },
         ],
@@ -751,6 +827,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Asun Fiery Pasta',
                 category: 'Pasta',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: AsunFieryPasta,
             },
             {
@@ -758,6 +835,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Pasta Bolognese',
                 category: 'Pasta',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: PastaBolognese,
             },
             {
@@ -765,6 +843,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Seafood Pasta',
                 category: 'Pasta',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: SeafoodPasta,
             },
             {
@@ -772,6 +851,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Linguine Carbonara',
                 category: 'Pasta',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: LinguineCarbonara,
             },
             {
@@ -779,6 +859,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Creamy Fettuccine Alfredo',
                 category: 'Pasta',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: CreamyFettuccineAlfredo,
             },
             {
@@ -786,6 +867,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Pasta Alla Vodka',
                 category: 'Pasta',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: PastaAllaVodka,
             },
             {
@@ -793,6 +875,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Marry Me Pasta',
                 category: 'Pasta',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: MarryMePasta,
             },
         ],
@@ -805,6 +888,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Steak and Mashed Potatoes',
                 category: 'Menu Classics',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: SteakandMashedPotatoes,
             },
             {
@@ -812,6 +896,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Prawn Provencal',
                 category: 'Menu Classics',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: PrawnProvencal,
             },
             {
@@ -819,6 +904,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Sushi',
                 category: 'Menu Classics',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: Sushi,
             },
             {
@@ -826,6 +912,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Seafood Boil',
                 category: 'Menu Classics',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: SeafoodBoil,
             },
         ],
@@ -838,6 +925,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Peppered Chicken',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: ChickenPepperedChicken,
             },
             {
@@ -845,6 +933,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Peppered Snail',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: PepperedSnail,
             },
             {
@@ -852,6 +941,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Chicken Kebab',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: ChickenKebab,
             },
             {
@@ -859,6 +949,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Beef Kebab',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: BeefKebab,
             },
             {
@@ -866,6 +957,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Braised Lamb Chops',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: BraisedLambChops,
             },
             {
@@ -873,6 +965,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Butterfly Prawns',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: ButterflyPrawns,
             },
             {
@@ -880,6 +973,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Grilled Steak',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: GrilledSteak,
             },
             {
@@ -887,6 +981,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Lemon Butter Salmon',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: LemonButterSalmon,
             },
             {
@@ -894,6 +989,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Turkey',
                 category: 'Proteins',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: Turkey,
             },
         ],
@@ -906,6 +1002,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Singapore Noodles',
                 category: 'Noodles Delight',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: SingaporeNoodles,
             },
             {
@@ -914,6 +1011,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 description: 'Noodles with a twist',
                 category: 'Noodles Delight',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: PepperSoupNoodles,
             },
             {
@@ -921,6 +1019,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Fried Noodles',
                 category: 'Noodles Delight',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: FriedNoodles,
             },
         ],
@@ -933,6 +1032,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Yogurt Parfait',
                 category: 'Desserts',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: YogurtParfait,
             },
             {
@@ -940,6 +1040,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Ice-cream Sundae',
                 category: 'Desserts',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: IceCreamSundae,
             },
             {
@@ -947,6 +1048,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Waffles & Ice-cream',
                 category: 'Desserts',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: WafflesAndIceCream,
             },
             {
@@ -954,6 +1056,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Fruit Bowls',
                 category: 'Desserts',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: FruitBowls,
             },
             {
@@ -961,6 +1064,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Red Velvet Cake',
                 category: 'Desserts',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: RedVelvetCake,
             },
             {
@@ -968,6 +1072,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Brownies',
                 category: 'Desserts',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: Brownies,
             },
         ],
@@ -980,6 +1085,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Shredded Beef Sauce',
                 category: 'Sauces',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: ShreddedBeefSauce,
             },
             {
@@ -987,6 +1093,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Chicken Curry Sauce',
                 category: 'Sauces',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: ChickenCurrySauce,
             },
             {
@@ -994,6 +1101,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Sweet Sour Chicken',
                 category: 'Sauces',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: SweetSourChicken,
             },
             {
@@ -1001,6 +1109,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Butter Chicken & Garlic Naan Bread',
                 category: 'Sauces',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: ButterChickenAndGarlicNaanBread,
             },
             {
@@ -1008,6 +1117,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Prawn Sauce',
                 category: 'Sauces',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: PrawnSauce,
             },
             {
@@ -1015,6 +1125,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Jamaica Goat Sauce',
                 category: 'Sauces',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: JamaicaGoatSauce,
             },
         ],
@@ -1027,6 +1138,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Pepper Sauce',
                 category: 'Dips & Cream',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: PepperSauce,
             },
             {
@@ -1034,6 +1146,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Salsa',
                 category: 'Dips & Cream',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: Salsa,
             },
             {
@@ -1041,6 +1154,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Guacamole',
                 category: 'Dips & Cream',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: Guacamole,
             },
             {
@@ -1048,6 +1162,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Aioli Sauce',
                 category: 'Dips & Cream',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: AioliSauce,
             },
             {
@@ -1055,6 +1170,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Buffalo Sauce',
                 category: 'Dips & Cream',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: BuffaloSauce,
             },
         ],
@@ -1067,6 +1183,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'French Fries',
                 category: 'Sides',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: FrenchFries,
             },
             {
@@ -1074,6 +1191,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Fried Plantains',
                 category: 'Sides',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: FriedPlantains,
             },
         ],
@@ -1086,6 +1204,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Chocolate Berry Smoothie',
                 category: 'Smoothies',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: ChocolateBerrySmoothie,
             },
             {
@@ -1093,6 +1212,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Peanut Butter Banana Smoothie',
                 category: 'Smoothies',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: PeanutButterBananaSmoothie,
             },
             {
@@ -1100,6 +1220,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Double Berry Blast',
                 category: 'Smoothies',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: DoubleBerryBlast,
             },
             {
@@ -1107,6 +1228,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Banana Almond Cado',
                 category: 'Smoothies',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: BananaAlmondCado,
             },
             {
@@ -1114,6 +1236,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Tropical Fruit Smoothie',
                 category: 'Smoothies',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: TropicalFruitSmoothie,
             },
             {
@@ -1121,6 +1244,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Peanut Butter Berry Smoothie',
                 category: 'Smoothies',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: PeanutButterBerrySmoothie,
             },
         ],
@@ -1134,6 +1258,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 description: 'Smooth vanilla, caramel drizzle',
                 category: 'Milkshakes',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: SmoothVanillaCaramelDrizzle,
             },
             {
@@ -1142,6 +1267,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 description: 'Fresh strawberries, vanilla ice cream',
                 category: 'Milkshakes',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: StrawberryBlissFreshStrawberriesVanillaIceCream,
             },
             {
@@ -1150,6 +1276,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 description: 'Cookies-and-cream ice cream, crushed oreo, chocolate sauce',
                 category: 'Milkshakes',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: CookiesAndCreamIceCreamCrushedOreoChocolateSauce
             },
             {
@@ -1158,6 +1285,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 description: 'Rich chocolate, whipped cream, chocolate chips',
                 category: 'Milkshakes',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: ChocolateDreamRichChocolateWhippedCreamChocolateChips,
             },
         ],
@@ -1170,6 +1298,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Hot Chocolate',
                 category: 'Tea',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: HotChocolate,
             },
             {
@@ -1177,6 +1306,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Iced Cappuccino',
                 category: 'Tea',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: IcedCappuccino,
             },
             {
@@ -1184,6 +1314,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Americano',
                 category: 'Tea',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: Americano,
             },
             {
@@ -1191,6 +1322,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Espresso',
                 category: 'Tea',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: Espresso,
             },
             {
@@ -1198,6 +1330,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Iced Americano',
                 category: 'Tea',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: IcedAmericano,
             },
             {
@@ -1205,6 +1338,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Caffé Latte',
                 category: 'Tea',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: CafféLatte,
             },
             {
@@ -1212,6 +1346,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'BOBA TEA',
                 category: 'Tea',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: 'https://worldlytreat.com/wp-content/uploads/2024/04/Tiger-milk-tea-1152x1536.jpg',
             },
             {
@@ -1219,6 +1354,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'ARABIAN TEA',
                 category: 'Tea',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Arabic_tea.jpg/1280px-Arabic_tea.jpg',
             },
         ],
@@ -1231,6 +1367,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Cheesy Beef Burrito',
                 category: 'Wraps & Sandwiches',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: ChessyBeefBurrito,
             },
             {
@@ -1238,6 +1375,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Croissant Chicken Sandwich',
                 category: 'Wraps & Sandwiches',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: CroissantChickenSandwich,
             },
             {
@@ -1245,6 +1383,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Special Taco Beeffold',
                 category: 'Wraps & Sandwiches',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: SpecialTacoBeeffold,
             },
             {
@@ -1252,6 +1391,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Bagel Delight',
                 category: 'Wraps & Sandwiches',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: BagelDelight,
             },
             {
@@ -1259,6 +1399,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Grilled Chicken Club Sandwich',
                 category: 'Wraps & Sandwiches',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: GrilledChickenClubSandwich,
             },
             {
@@ -1266,6 +1407,7 @@ const crazyCornerCategories: MenuCategory[] = [
                 name: 'Cheeseburger',
                 category: 'Wraps & Sandwiches',
                 section: 'Crazy Corner',
+                price: DEFAULT_PRICE_KOBO,
                 image: Cheeseburger,
             },
         ],

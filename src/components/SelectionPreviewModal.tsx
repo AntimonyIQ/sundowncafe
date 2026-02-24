@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import type { MenuItem } from '../data/menu'
+import { SHOW_PRICE } from '../data/menu'
+import { formatNairaFromKobo } from '../utils/formatCurrency'
 import defaultFoodImage from '../assets/images/rice-bowl.png'
 import { generateShareUrl } from '../utils/shareSelection'
 
@@ -18,6 +20,7 @@ export default function SelectionPreviewModal({
     onRemoveItem
 }: SelectionPreviewModalProps) {
     // const total = selectedItems.reduce((sum, item) => sum + (item.price || 0), 0)
+    const totalKobo: number = selectedItems.reduce((sum, item) => sum + item.price, 0)
     const [shareToast, setShareToast] = useState<'copied' | 'shared' | null>(null)
 
     const handleShare = async () => {
@@ -178,13 +181,11 @@ export default function SelectionPreviewModal({
                                             <h4 className="font-bold text-stone-800 text-sm leading-snug line-clamp-2">
                                                 {item.name}
                                             </h4>
-                                            {/*
-                                            {item.price && (
+                                            {SHOW_PRICE && (
                                                 <div className="text-brand-orange font-bold text-xs mt-0.5">
-                                                    ₦{item.price.toLocaleString()}
+                                                    {formatNairaFromKobo(item.price)}
                                                 </div>
                                             )}
-                                            */}
                                         </div>
                                         <button
                                             onClick={() => onRemoveItem(item.id)}
@@ -209,11 +210,11 @@ export default function SelectionPreviewModal({
                                     <span className="text-sm text-stone-500">
                                         {selectedItems.length} item{selectedItems.length !== 1 ? 's' : ''} selected
                                     </span>
-                                    {/*
-                                    <span className="text-base font-bold text-stone-900 font-luxury">
-                                        ₦{total.toLocaleString()}
-                                    </span>
-                                    */}
+                                    {SHOW_PRICE && (
+                                        <span className="text-base font-bold text-stone-900 font-luxury">
+                                            {formatNairaFromKobo(totalKobo)}
+                                        </span>
+                                    )}
                                 </div>
                                 <button
                                     onClick={handleShare}

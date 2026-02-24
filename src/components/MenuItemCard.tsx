@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 import type { MenuItem } from '../data/menu'
+import { SHOW_PRICE } from '../data/menu'
+import { formatNairaFromKobo } from '../utils/formatCurrency'
 import defaultFoodImage from '../assets/images/rice-bowl.png'
 
 interface MenuItemCardProps {
@@ -89,13 +91,11 @@ export default function MenuItemCard({
                 <h3 className="text-sm font-bold text-stone-800 leading-snug line-clamp-2">
                     {item.name}
                 </h3>
-                {/*
-                {item.price && (
+                {SHOW_PRICE && (
                     <p className="text-xs text-brand-orange font-semibold mt-1">
-                        ₦{item.price.toLocaleString()}
+                        {formatNairaFromKobo(item.price)}
                     </p>
                 )}
-                */}
             </div>
         </motion.div>
     )
