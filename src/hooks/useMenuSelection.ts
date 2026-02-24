@@ -42,6 +42,10 @@ export function useMenuSelection() {
     setSelectedIds(new Set<string>())
   }, [])
 
+  const loadSelection = useCallback((ids: string[]) => {
+    setSelectedIds(new Set(ids))
+  }, [])
+
   const isSelected = useCallback(
     (itemId: string) => {
       return selectedIds.has(itemId)
@@ -55,6 +59,7 @@ export function useMenuSelection() {
     selectedIds,
     toggleItem,
     clearAll,
+    loadSelection,
     isSelected,
     selectedCount
   }

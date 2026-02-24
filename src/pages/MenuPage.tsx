@@ -4,6 +4,7 @@ import { menuData } from '../data/menu'
 import type { MenuSection as MenuSectionType, MenuItem } from '../data/menu'
 import { useMenuSelection } from '../hooks/useMenuSelection'
 import { useSEO } from '../hooks/useSEO'
+import { decodeSelection } from '../utils/shareSelection'
 import MenuCategory from '../components/MenuCategory'
 import { motion, AnimatePresence } from 'framer-motion'
 // import AfricanFrame from '../components/AfricanFrame'
@@ -38,7 +39,8 @@ export default function MenuPage() {
     });
     const [searchParams] = useSearchParams()
     const seatParam = searchParams.get('seat')
-    const { isSelected, toggleItem, clearAll, selectedCount, selectedIds } = useMenuSelection()
+    const selectionParam = searchParams.get('selection')
+    const { isSelected, toggleItem, clearAll, loadSelection, selectedCount, selectedIds } = useMenuSelection()
     const [isClearModalOpen, setIsClearModalOpen] = useState(false)
     const [isSelectionModalOpen, setIsSelectionModalOpen] = useState(false)
     const [previewItem, setPreviewItem] = useState<MenuItem | null>(null)
@@ -91,6 +93,20 @@ export default function MenuPage() {
             activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
         }
     }, [activeTab])
+
+    // Load shared selection from URL param on first mount
+    useEffect(() => {
+        if (!selectionParam) return
+        const ids = decodeSelection(selectionParam)
+        if (ids) {
+            loadSelection(ids)
+        }
+        // Remove the query param from the URL without triggering a navigation
+        const url = new URL(window.location.href)
+        url.searchParams.delete('selection')
+        window.history.replaceState(null, '', url.toString())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <div className="min-h-screen bg-stone-100 font-sans">
