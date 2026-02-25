@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sundown.cafe/sitemap.xml
+Sitemap: https://sundowncafe.com/sitemap.xml

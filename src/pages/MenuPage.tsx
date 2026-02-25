@@ -35,7 +35,7 @@ export default function MenuPage() {
     useSEO({
         title: 'Menu — Sundown Cafe | Gourmet Food & Artisanal Coffee in Port Harcourt',
         description: 'Explore the Sundown Cafe menu featuring gourmet burgers, grilled proteins, smoothies, artisanal coffee, and decadent desserts. Best café menu in Port Harcourt, GRA.',
-        canonical: 'https://sundown.cafe/menu',
+        canonical: 'https://sundowncafe.com/menu',
     });
     const [searchParams] = useSearchParams()
     const seatParam = searchParams.get('seat')

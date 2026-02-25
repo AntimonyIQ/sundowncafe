@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://sundown.cafe/sitemap.xml
+Sitemap: https://sundowncafe.com/sitemap.xml

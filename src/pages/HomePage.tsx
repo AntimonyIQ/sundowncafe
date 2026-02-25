@@ -37,7 +37,7 @@ export default function HomePage() {
     useSEO({
         title: 'Sundown Cafe — Refined Dining & Artisanal Moments | Port Harcourt',
         description: 'Visit Sundown Cafe at 149 Woji Road, GRA, Port Harcourt. Enjoy gourmet dishes, artisanal coffee, and an elegant atmosphere. Call +234 812 345 6789 to book a table.',
-        canonical: 'https://sundown.cafe/',
+        canonical: 'https://sundowncafe.com/',
     });
     return (
         <div className="relative w-full h-dvh overflow-hidden font-sans text-white">
